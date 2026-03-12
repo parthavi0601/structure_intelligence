@@ -17,19 +17,19 @@
   --accent-orange: #F6AD55;
   --accent-red: #F87171;
   --accent-green: #34D399;
-  
+
   --badge-normal-bg: rgba(52, 211, 153, 0.15);
   --badge-normal-text: #6EE7B7;
   --badge-normal-border: rgba(52, 211, 153, 0.3);
-  
+
   --badge-warning-bg: rgba(245, 158, 11, 0.15);
   --badge-warning-text: #FCD34D;
   --badge-warning-border: rgba(245, 158, 11, 0.3);
-  
+
   --badge-danger-bg: rgba(239, 68, 68, 0.15);
   --badge-danger-text: #FCA5A5;
   --badge-danger-border: rgba(239, 68, 68, 0.3);
-  
+
   --chart-grid: #2D3748;
   --chart-axis: #A0AEC0;
   --chart-tooltip-bg: #1A202C;
@@ -49,19 +49,19 @@
   --glass-hover-bg: rgba(255, 255, 255, 0.9);
   --text-primary: #0F172A;
   --text-secondary: #475569;
-  
+
   --badge-normal-bg: #D1FAE5;
   --badge-normal-text: #059669;
   --badge-normal-border: #A7F3D0;
-  
+
   --badge-warning-bg: #FEF3C7;
   --badge-warning-text: #D97706;
   --badge-warning-border: #FDE68A;
-  
+
   --badge-danger-bg: #FEE2E2;
   --badge-danger-text: #DC2626;
   --badge-danger-border: #FECACA;
-  
+
   --chart-grid: #E2E8F0;
   --chart-axis: #64748B;
   --chart-tooltip-bg: #FFFFFF;
@@ -76,9 +76,9 @@
 
 body {
   background-color: var(--bg-color);
-  background-image: 
-    radial-gradient(at 0% 0%, var(--bg-gradient-1) 0, transparent 50%), 
-    radial-gradient(at 50% 0%, var(--bg-gradient-2) 0, transparent 50%), 
+  background-image:
+    radial-gradient(at 0% 0%, var(--bg-gradient-1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, var(--bg-gradient-2) 0, transparent 50%),
     radial-gradient(at 100% 0%, var(--bg-gradient-3) 0, transparent 50%);
   background-attachment: fixed;
   color: var(--text-primary);
@@ -259,10 +259,33 @@ h1 {
   letter-spacing: -0.05em;
 }
 
-.metric-value.highlight-blue { background: linear-gradient(135deg, #60A5FA, #3B82F6); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
-.metric-value.highlight-orange { background: linear-gradient(135deg, #FBD38D, #F6AD55); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
-.metric-value.highlight-red { background: linear-gradient(135deg, #FCA5A5, #EF4444); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
-.metric-value.highlight-purple { background: linear-gradient(135deg, #C084FC, #9333EA); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
+.metric-value.highlight-blue {
+  background: linear-gradient(135deg, #60A5FA, #3B82F6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-value.highlight-orange {
+  background: linear-gradient(135deg, #FBD38D, #F6AD55);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-value.highlight-red {
+  background: linear-gradient(135deg, #FCA5A5, #EF4444);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.metric-value.highlight-purple {
+  background: linear-gradient(135deg, #C084FC, #9333EA);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
 .state-value {
   display: flex;
@@ -291,12 +314,26 @@ h1 {
   font-size: 0.875rem;
   font-weight: 600;
   letter-spacing: 0.025em;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.state-normal { background: var(--badge-normal-bg); color: var(--badge-normal-text); border: 1px solid var(--badge-normal-border); }
-.state-warning { background: var(--badge-warning-bg); color: var(--badge-warning-text); border: 1px solid var(--badge-warning-border); }
-.state-danger { background: var(--badge-danger-bg); color: var(--badge-danger-text); border: 1px solid var(--badge-danger-border); }
+.state-normal {
+  background: var(--badge-normal-bg);
+  color: var(--badge-normal-text);
+  border: 1px solid var(--badge-normal-border);
+}
+
+.state-warning {
+  background: var(--badge-warning-bg);
+  color: var(--badge-warning-text);
+  border: 1px solid var(--badge-warning-border);
+}
+
+.state-danger {
+  background: var(--badge-danger-bg);
+  color: var(--badge-danger-text);
+  border: 1px solid var(--badge-danger-border);
+}
 
 /* Charts */
 .charts-grid {
@@ -353,6 +390,7 @@ h1 {
   border-radius: 12px;
   padding: 1rem;
 }
+
 [data-theme='dark'] .chart-wrapper {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -378,11 +416,159 @@ h1 {
 }
 
 @keyframes rotation {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Utility to override Recharts default responsive container inner div */
 .recharts-responsive-container {
   transition: opacity 0.3s ease;
 }
+
+/* Tabs Navigation */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: -10px;
+  margin-bottom: 24px;
+  padding: 0 24px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.tab-btn:hover {
+  white-space: nowrap;
+}
+
+/* Main Layout Grid */
+.main-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+  padding: 0 24px 24px;
+}
+
+.analysis-column {
+  min-width: 0;
+}
+
+@media (max-width: 1200px) {
+  .main-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Insights Panel */
+.insights-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.insight-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-left: 4px solid #00ffff !important;
+}
+
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.insight-header h3 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.insight-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin: 0;
+  font-style: italic;
+}
+
+.insight-footer {
+  font-size: 0.75rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-secondary);
+  opacity: 0.6;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 12px;
+  margin-top: 8px;
+}
+
+.quick-actions {
+  padding: 20px;
+}
+
+.quick-actions h3 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.status-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem;
+}
+
+.status-item .label {
+  color: var(--text-secondary);
+}
+
+.status-item .value {
+  font-weight: 600;
+}
+
+.status-item .value.success {
+  color: var(--accent-green);
+}
+
+/* Fix digital twin container padding when in grid */
+.digital-twin-container {
+  padding: 0 !important;
+}
+
+.tab-btn {
+  white-space: nowrap;
+}

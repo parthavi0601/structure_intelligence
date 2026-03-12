@@ -1,0 +1,25 @@
+Structural Intelligence Platform - Project Documentation
+
+1. Pipeline & Backend Machine Learning
+The system processes structural health monitoring data through a localized Python ML pipeline:
+   a. Signal Processing (`run_signal_processing.py`): Cleans and standardizes raw sensor data.
+   b. Feature Extraction (`run_feature_extraction.py`): Derives mechanical parameters.
+   c. Behavioral Analysis (`run_behavior_analysis.py`): Uses unsupervised clustering to segment the data into structural states.
+   d. Anomaly Detection (`run_anomaly_detection.py`): Uses an Autoencoder neural network to identify unseen failure patterns based on reconstruction errors.
+   e. Risk Prediction (`run_risk_prediction.py`): Employs a Random Forest Regressor to forecast a `Predicted_Risk_Score` dynamically from the historical behavioral and anomalous patterns.
+The backend API (`api.py`) serves this ML-enriched dataset sequentially via an asynchronous REST API built on FastAPI.
+
+2. Analytics Dashboard (Frontend)
+A modern, glassmorphism-themed React application.
+Features:
+   - Dynamic real-time plotting of Behavioral Shifts, Structural Dynamics, and AI-predicted Failure Risks.
+   - Intelligent alerting based on static anomaly boundaries from the ML models.
+   - Seamless data integration displaying the Autoencoder anomaly reconstruction errors beside Failure Risk Forecasts.
+   - Light/Dark mode toggling for accessibility and aesthetics.
+
+3. Digital Twin Engine
+An integrated Euler-Bernoulli beam simulation running securely in the browser.
+Features:
+   - Interactive Node inspection to track mechanical strain, deflection, and bending stress locally.
+   - Mathematical modeling reacting live to user-configurable external forces (Traffic Load) and Environmental forces (Temperature).
+   - "Scenario preset" testing allowing engineers to view how the simulated bridge responds to extreme heat, peak traffic, or isolated structural node degradation.
