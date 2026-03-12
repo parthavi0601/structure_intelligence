@@ -1,0 +1,93 @@
+Agentic AI Engineering Assistant: Implementation Explanation
+============================================================
+This document explains the design and implementation of the Agentic AI Engineering Assistant,
+the sixth feature of the AI-Powered Structural Intelligence System.
+
+1. Objective
+------------
+The Agentic AI Engineering Assistant is a conversational, tool-driven AI agent that interprets
+the outputs of the previous four pipeline stages (Sensor Fusion, Behavior Analysis, Anomaly
+Detection, and Failure Risk Prediction) to provide actionable engineering guidance.
+
+It enables engineers to ask natural-language questions such as:
+  - "Why was Bridge A flagged as high risk?"
+  - "What maintenance action should be prioritized this month?"
+  - "Show the latest anomaly events."
+and receive structured, numerical engineering responses grounded in actual monitoring data.
+
+2. Architecture Overview
+------------------------
+The agent is built on three layers:
+
+  Layer 1 — Data Access:
+    The five structured analysis tools in the `tools/` directory directly read the enriched
+    `*_behavior.parquet` files from the `processed/` directory using pandas. These parquet
+    files already contain the AI-generated structural indicators from previous modules.
+
+  Layer 2 — Vector Store (RAG):
+    The `embeddings/build_vectorstore.py` script reads all processed datasets, generates
+    per-asset natural-language summaries (e.g., "Bridge B1 | Risk Score: 0.82 | Anomaly: 0.91"),
+    and embeds them using OllamaEmbeddings (nomic-embed-text model). These embeddings are
+    stored in a FAISS vector index at `processed/faiss_index/`. At query time, the top-3
+    most relevant structural summaries are retrieved and prepended as context to the query.
+
+  Layer 3 — LLM Agent (Reasoning):
+    The `agent_assistant.py` initializes a ChatOllama LLM (llama3 / mistral / gemma) and
+    defines a ReAct-style LangChain agent with a structural engineering system prompt. The
+    prompt explicitly restricts the LLM to only answer based on tool outputs, preventing
+    hallucinated numbers.
+
+3. The Five Agent Tools
+-----------------------
+  Tool 1: analyze_infrastructure_health
+    Returns fleet-level metrics: mean/max anomaly score, mean/max risk score, alert counts,
+    and dominant behavioral state cluster across all monitored datasets.
+
+  Tool 2: explain_high_risk
+    Given an asset identifier, traces its risk explanation back through anomaly spikes,
+    behavioral shift trajectory, structural dynamics changes, and supporting sensor readings.
+    Outputs a structured engineering explanation with a maintenance recommendation.
+
+  Tool 3: prioritize_maintenance
+    Ranks all infrastructure assets by Predicted_Risk_Score into three tiers:
+    - Tier 1 CRITICAL (≥0.75): Immediate inspection within 72 hours.
+    - Tier 2 HIGH (≥0.50): Inspection within 2 weeks.
+    - Tier 3 ROUTINE (<0.50): Standard monitoring schedule.
+
+  Tool 4: inspect_anomaly_timeline
+    Surfaces all timestamped anomaly events (Anomaly_Alert_Flag == 1 or score ≥ 0.70),
+    identifies sustained burst clusters of consecutive alerts, and provides sensor context
+    around each event.
+
+  Tool 5: generate_health_summary
+    Generates a complete per-asset engineering report covering: anomaly trends (rising/falling),
+    behavioral drift, risk trajectory, modal operational state, and a specific recommended
+    maintenance action per asset, plus a fleet-level critical/high/healthy count.
+
+4. Fallback Behavior
+--------------------
+If the local LLM is unavailable (Ollama not running), the agent automatically falls back
+to direct keyword-based tool routing. This ensures the tools themselves always work
+independently of the LLM, making the system resilient for demonstration environments.
+
+5. Streamlit / API Integration
+-------------------------------
+The `run_query(query: str) -> str` function in `agent_assistant.py` is the clean public
+interface. It can be imported into a Streamlit dashboard or FastAPI endpoint directly:
+
+    from agent_assistant import run_query
+    response = run_query("Summarize structural health")
+
+6. Files Created
+----------------
+  agent_assistant.py           — Main agent entry point + CLI
+  agent_config.py              — Central configuration (model, thresholds, paths)
+  agent_requirements.txt       — Python dependencies for this module
+  embeddings/
+    build_vectorstore.py       — FAISS index builder from parquet summaries
+  tools/
+    health_analyzer.py         — Tool 1: Fleet health overview
+    risk_explainer.py          — Tool 2: Asset-level risk explanation
+    maintenance_prioritizer.py — Tool 3: Maintenance priority ranking
+    anomaly_timeline.py        — Tool 4: Anomaly event timeline
+    health_summary.py          — Tool 5: Full structural health report
