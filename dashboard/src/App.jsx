@@ -1,37 +1,63 @@
-import { useState, useEffect } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, ComposedChart, Bar } from 'recharts';
-import { Activity, AlertTriangle, CheckCircle, ChevronDown, MapPin, Moon, Sun, ShieldAlert, Cpu, Zap } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import {
+  LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip,
+  ResponsiveContainer, AreaChart, Area, ComposedChart, Bar
+} from 'recharts';
+import {
+  Activity, AlertTriangle, CheckCircle, ChevronDown, MapPin,
+  Moon, Sun, ShieldAlert, Cpu, Zap, Send, Bot, User, FileDown
+} from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import BridgeDigitalTwin from './BridgeDigitalTwin';
 import './App.css';
 
 const API_URL = "http://localhost:8000";
 
+const EXAMPLE_QUERIES = [
+  "Summarize the structural health of monitored assets.",
+  "What maintenance action should be prioritized this month?",
+  "Show the latest anomaly events.",
+  "Which structures show abnormal vibration patterns?",
+  "Why was a structure flagged as high risk?",
+];
+
 const fadeInUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden:  { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
-
 const staggerContainer = {
-  hidden: { opacity: 0 },
+  hidden:  { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
 };
 
 function App() {
-  const [bridges, setBridges] = useState([]);
+  const [bridges, setBridges]               = useState([]);
   const [selectedBridge, setSelectedBridge] = useState('');
-  const [metrics, setMetrics] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [activeTab, setActiveTab] = useState('behavior');
-  const [theme, setTheme] = useState('dark');
-  const [tick, setTick] = useState(0);
+  const [metrics, setMetrics]               = useState([]);
+  const [loading, setLoading]               = useState(false);
+  const [activeTab, setActiveTab]           = useState('behavior');
+  const [theme, setTheme]                   = useState('dark');
+  const [tick, setTick]                     = useState(0);
 
-  // live clock tick for header
+  const [aiConclusion, setAiConclusion]         = useState('');
+  const [conclusionLoading, setConclusionLoading] = useState(false);
+
+  const [chatMessages, setChatMessages] = useState([{
+    role: 'assistant',
+    content: 'Hello, Engineer. I am your AI Structural Intelligence Assistant. Ask me anything about the monitored infrastructure — anomalies, risk scores, maintenance priorities, or behavioral patterns.',
+    timestamp: new Date().toLocaleTimeString(),
+  }]);
+  const [chatInput, setChatInput]   = useState('');
+  const [chatLoading, setChatLoading] = useState(false);
+  const chatEndRef = useRef(null);
+
+  // Live clock
   useEffect(() => {
     const id = setInterval(() => setTick(t => t + 1), 1000);
     return () => clearInterval(id);
   }, []);
 
+  // Theme
   useEffect(() => {
     const saved = localStorage.getItem('theme') || 'dark';
     setTheme(saved);
@@ -45,6 +71,7 @@ function App() {
     localStorage.setItem('theme', next);
   };
 
+  // Load bridges
   useEffect(() => {
     fetch(`${API_URL}/api/bridges`)
       .then(r => r.json())
@@ -54,6 +81,7 @@ function App() {
       .catch(console.error);
   }, []);
 
+  // Load metrics for selected bridge
   useEffect(() => {
     if (!selectedBridge) return;
     setLoading(true);
@@ -63,42 +91,50 @@ function App() {
       .catch(() => setLoading(false));
   }, [selectedBridge]);
 
-  const latest = metrics.length ? metrics[metrics.length - 1] : null;
+  // Fetch AI conclusion on tab / bridge change
+  useEffect(() => {
+    if (!selectedBridge || activeTab === 'twin') return;
+    setConclusionLoading(true);
+    setAiConclusion('');
+    fetch(`${API_URL}/api/agent-conclusion/${activeTab}/${selectedBridge}`)
+      .then(r => r.json())
+      .then(d => { setAiConclusion(d.conclusion || 'Analysis complete.'); setConclusionLoading(false); })
+      .catch(() => { setAiConclusion('Could not retrieve AI analysis.'); setConclusionLoading(false); });
+  }, [activeTab, selectedBridge]);
 
-  const getAIInsight = (tab) => {
-    if (!latest) return "Collecting structural data...";
-    
-    switch (tab) {
-      case 'behavior':
-        const condition = latest.structural_condition || 0;
-        const shift = latest.Behavioral_Shift_Index || 0;
-        if (condition > 0.9 && shift < 0.05) return "Structural behavior is exceptionally stable. The bridge is perfectly adapting to current traffic loads with minimal drift.";
-        if (shift > 0.1) return "A minor behavioral shift is detected. This usually indicates seasonal thermal expansion or regular maintenance needs. No structural integrity risks.";
-        return "Stable structural dynamics. The baseline signature remains consistent with historical patterns.";
-      
-      case 'anomaly':
-        const alert = latest.Anomaly_Alert_Flag;
-        const score = latest.Autoencoder_Anomaly_Score || 0;
-        if (!alert && score < 0.1) return "Anomaly detection systems show no irregularities. All neural network reconstruction errors are within the 'Healthy' threshold.";
-        if (alert) return "The system has flagged a secondary dynamic anomaly. While structural health is good, this may indicate sensor noise or a heavy-load vehicle passage.";
-        return "Data patterns are clean and consistent. The structural condition remains within normal operating parameters.";
-        
-      case 'risk':
-        const risk = latest.Predicted_Risk_Score || latest.forecast_score_next_30d || 0;
-        const degradation = latest.degradation_score || 0;
-        // Simple linear extrapolation for "years to survive":
-        // Assume failure at risk = 100%. Current risk is 'risk'. 
-        // Deg per year is roughly (degradation * 12) if degradation is monthly?
-        // Let's assume a healthy bridge survives 50+ years.
-        const yearsRemaining = Math.max(5, Math.floor((1 - risk) / (degradation > 0 ? degradation * 0.1 : 0.005)));
-        
-        if (risk < 0.1) return `High structural reliability. At the current degradation rate of ${(degradation * 100).toFixed(2)}%, the bridge is projected to remain fully operational for over ${yearsRemaining} years.`;
-        if (risk < 0.3) return `Moderate health status. Predicted service life is approximately ${yearsRemaining} years. Continued monitoring is recommended for non-critical repairs.`;
-        return `Elevated risk profile detected. Projected remaining life is ${yearsRemaining} years. We recommend a physical inspection within the next budget cycle.`;
-        
-      default: return "Select a tab to view AI-driven structural insights.";
+  // Auto-scroll chat
+  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [chatMessages]);
+
+  const sendChat = async (overrideMsg) => {
+    const text = (overrideMsg || chatInput).trim();
+    if (!text || chatLoading) return;
+    setChatInput('');
+    const userMsg = { role: 'user', content: text, timestamp: new Date().toLocaleTimeString() };
+    setChatMessages(prev => [...prev, userMsg]);
+    setChatLoading(true);
+    try {
+      const res  = await fetch(`${API_URL}/api/chat`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: text }),
+      });
+      const data = await res.json();
+      setChatMessages(prev => [...prev, {
+        role: 'assistant',
+        content: data.response || 'No response received.',
+        timestamp: new Date().toLocaleTimeString(),
+      }]);
+    } catch {
+      setChatMessages(prev => [...prev, {
+        role: 'assistant',
+        content: 'Connection error. Ensure the FastAPI server is running on port 8000.',
+        timestamp: new Date().toLocaleTimeString(),
+      }]);
     }
+    setChatLoading(false);
   };
+
+  const latest = metrics.length ? metrics[metrics.length - 1] : null;
 
   const getStateBadge = (cluster) => {
     if (cluster === 0) return <span className="badge state-normal"><CheckCircle size={12} /> NORMAL BASELINE</span>;
@@ -109,94 +145,75 @@ function App() {
 
   const TABS = [
     { id: 'behavior', label: 'STRUCTURE BEHAVIOR', icon: <Activity size={14} /> },
-    { id: 'anomaly', label: 'ANOMALY DETECTION', icon: <Zap size={14} /> },
-    { id: 'risk', label: 'RISK PREDICTION', icon: <ShieldAlert size={14} /> },
-    { id: 'twin', label: 'DIGITAL TWIN', icon: <Cpu size={14} /> },
+    { id: 'anomaly',  label: 'ANOMALY DETECTION',  icon: <Zap size={14} /> },
+    { id: 'risk',     label: 'RISK PREDICTION',    icon: <ShieldAlert size={14} /> },
+    { id: 'twin',     label: 'DIGITAL TWIN',       icon: <Cpu size={14} /> },
   ];
 
+  // ─── JSX ────────────────────────────────────────────────────────────────────
   return (
     <div className="dashboard-container">
 
-      {/* ── Header ─────────────────────────────────────────── */}
-      <motion.header
-        className="dashboard-header"
-        initial={{ opacity: 0, y: -16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-      >
+      {/* Header */}
+      <motion.header className="dashboard-header"
+        initial={{ opacity: 0, y: -16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
         <div className="header-title">
-          <div className="logo-icon">
-            <Activity color="#00ffff" size={26} />
-          </div>
+          <div className="logo-icon"><Activity color="#00ffff" size={26} /></div>
           <div>
             <div className="header-sysline">AUGENBLICK SYSTEMS · PS-02</div>
             <h1>STRUCTURAL <span>INTELLIGENCE</span> PLATFORM</h1>
             <p>BEHAVIORAL SHIFT ANALYSIS &amp; DYNAMICS MONITORING · T+{String(tick).padStart(5, '0')}s</p>
           </div>
         </div>
-
         <div className="header-controls">
           <div className="bridge-selector">
             <MapPin size={15} className="selector-icon" />
-            <select
-              value={selectedBridge}
-              onChange={e => setSelectedBridge(e.target.value)}
-              className="styled-select"
-            >
+            <select value={selectedBridge} onChange={e => setSelectedBridge(e.target.value)} className="styled-select">
               {bridges.map(b => <option key={b} value={b}>{b}</option>)}
             </select>
             <ChevronDown size={14} className="selector-chevron" />
           </div>
-
           <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
             {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
           </button>
         </div>
       </motion.header>
 
-      {/* ── Tabs ────────────────────────────────────────────── */}
+      {/* Tabs */}
       <div className="tabs-container">
         {TABS.map(t => (
-          <button
-            key={t.id}
-            className={`tab-btn ${activeTab === t.id ? 'active' : ''}`}
-            onClick={() => setActiveTab(t.id)}
-          >
+          <button key={t.id} className={`tab-btn ${activeTab === t.id ? 'active' : ''}`} onClick={() => setActiveTab(t.id)}>
             {t.icon} {t.label}
           </button>
         ))}
       </div>
 
-      {/* ── Content ─────────────────────────────────────────── */}
-      <div className="main-layout-grid">
+      {/* 3-column grid: main content | AI conclusion | chat */}
+      <div className={`main-layout-grid ${activeTab === 'twin' ? 'twin-layout' : ''}`}>
+
+        {/* ── Main content column ─────────────────────────── */}
         <div className="analysis-column">
           {loading && activeTab !== 'twin' ? (
             <div className="loader-container">
-              <div className="loader" />
-              <p>ANALYZING STRUCTURAL DATA...</p>
+              <div className="loader" /><p>ANALYZING STRUCTURAL DATA...</p>
             </div>
+
           ) : activeTab === 'behavior' ? (
             <main className="dashboard-content">
               <motion.div className="metrics-grid" variants={staggerContainer} initial="hidden" animate="visible">
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">Behavioral Shift Index</div>
-                  <div className="metric-value highlight-blue">
-                    {latest?.Behavioral_Shift_Index?.toFixed(4) ?? "—"}
-                  </div>
+                  <div className="metric-value highlight-blue">{latest?.Behavioral_Shift_Index?.toFixed(4) ?? "—"}</div>
                   <div className="metric-footer">NORMALIZED LOG-LIKELIHOOD DEVIATION</div>
                 </motion.div>
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">Current Behavioral State</div>
-                  <div className="metric-value state-value">
-                    {latest ? getStateBadge(latest.Behavioral_State_Cluster) : "—"}
-                  </div>
+                  <div className="metric-value state-value">{latest ? getStateBadge(latest.Behavioral_State_Cluster) : "—"}</div>
                   <div className="metric-footer">GAUSSIAN MIXTURE MODE</div>
                 </motion.div>
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">Structural Condition Score</div>
-                  <div className="metric-value highlight-blue">
-                    {latest?.structural_condition !== undefined ? latest.structural_condition.toFixed(3) : "—"}
-                  </div>
+                  <div className="metric-value highlight-blue">{latest?.structural_condition !== undefined ? latest.structural_condition.toFixed(3) : "—"}</div>
                   <div className="metric-footer">CONDITION STATE</div>
                 </motion.div>
               </motion.div>
@@ -211,11 +228,11 @@ function App() {
                       <AreaChart data={metrics} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="gradShift" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#00ffff" stopOpacity={0.35} />
+                            <stop offset="5%"  stopColor="#00ffff" stopOpacity={0.35} />
                             <stop offset="95%" stopColor="#00ffff" stopOpacity={0} />
                           </linearGradient>
                           <linearGradient id="gradDeg" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#00ff9d" stopOpacity={0.25} />
+                            <stop offset="5%"  stopColor="#00ff9d" stopOpacity={0.25} />
                             <stop offset="95%" stopColor="#00ff9d" stopOpacity={0} />
                           </linearGradient>
                         </defs>
@@ -231,6 +248,7 @@ function App() {
                 </motion.div>
               </motion.div>
             </main>
+
           ) : activeTab === 'anomaly' ? (
             <main className="dashboard-content">
               <motion.div className="metrics-grid" variants={staggerContainer} initial="hidden" animate="visible">
@@ -245,16 +263,12 @@ function App() {
                 </motion.div>
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">Autoencoder Anomaly Score</div>
-                  <div className="metric-value highlight-purple">
-                    {latest?.Autoencoder_Anomaly_Score !== undefined ? latest.Autoencoder_Anomaly_Score.toFixed(4) : "—"}
-                  </div>
+                  <div className="metric-value highlight-purple">{latest?.Autoencoder_Anomaly_Score !== undefined ? latest.Autoencoder_Anomaly_Score.toFixed(4) : "—"}</div>
                   <div className="metric-footer">NEURAL NET RECONSTRUCTION ERROR</div>
                 </motion.div>
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">Structural Dynamics Score</div>
-                  <div className="metric-value highlight-orange">
-                    {latest?.Structural_Dynamics_Score?.toFixed(4) ?? "—"}
-                  </div>
+                  <div className="metric-value highlight-orange">{latest?.Structural_Dynamics_Score?.toFixed(4) ?? "—"}</div>
                   <div className="metric-footer">ISOLATION FOREST ANOMALY RANKING</div>
                 </motion.div>
               </motion.div>
@@ -279,6 +293,7 @@ function App() {
                 </motion.div>
               </motion.div>
             </main>
+
           ) : activeTab === 'risk' ? (
             <main className="dashboard-content">
               <motion.div className="metrics-grid" variants={staggerContainer} initial="hidden" animate="visible">
@@ -295,9 +310,7 @@ function App() {
                 </motion.div>
                 <motion.div variants={fadeInUp} className="metric-card glass-panel">
                   <div className="metric-header">30-Day Forecast Delta</div>
-                  <div className="metric-value highlight-orange">
-                    {latest?.forecast_score_next_30d !== undefined ? latest.forecast_score_next_30d.toFixed(3) : "—"}
-                  </div>
+                  <div className="metric-value highlight-orange">{latest?.forecast_score_next_30d !== undefined ? latest.forecast_score_next_30d.toFixed(3) : "—"}</div>
                   <div className="metric-footer">TIME SERIES FORECASTING BASELINE</div>
                 </motion.div>
               </motion.div>
@@ -312,7 +325,7 @@ function App() {
                       <AreaChart data={metrics} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="gradRisk" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%" stopColor="#ff2d55" stopOpacity={0.4} />
+                            <stop offset="5%"  stopColor="#ff2d55" stopOpacity={0.4} />
                             <stop offset="95%" stopColor="#ff2d55" stopOpacity={0} />
                           </linearGradient>
                         </defs>
@@ -348,9 +361,9 @@ function App() {
                     </ResponsiveContainer>
                   </div>
                 </motion.div>
-
               </motion.div>
             </main>
+
           ) : (
             <main className="dashboard-content digital-twin-container">
               <BridgeDigitalTwin />
@@ -358,41 +371,122 @@ function App() {
           )}
         </div>
 
+        {/* ── AI Conclusion column (middle) ───────────────────── */}
         {activeTab !== 'twin' && (
-          <motion.aside 
-            className="insights-panel"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.4 }}
-          >
+          <motion.aside className="insights-panel"
+            initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.4 }}>
             <div className="insight-card glass-panel">
               <div className="insight-header">
                 <Zap size={18} color="#00ffff" />
                 <h3>AI CONCLUSION</h3>
+                {conclusionLoading && <div className="conclusion-spinner" />}
               </div>
-              <p className="insight-text">
-                {getAIInsight(activeTab)}
-              </p>
+              <AnimatePresence mode="wait">
+                <motion.p
+                  key={`${activeTab}-${selectedBridge}`}
+                  className="insight-text"
+                  initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  {conclusionLoading
+                    ? 'Generating AI analysis...'
+                    : aiConclusion || 'Select a bridge and tab to view AI-driven insights.'}
+                </motion.p>
+              </AnimatePresence>
               <div className="insight-footer">
-                Dynamic Structural Intelligence Report
-              </div>
-            </div>
-
-            <div className="quick-actions glass-panel">
-              <h3>SYSTEM STATS</h3>
-              <div className="status-grid">
-                <div className="status-item">
-                  <span className="label">Uptime</span>
-                  <span className="value success">99.9%</span>
-                </div>
-                <div className="status-item">
-                  <span className="label">Sync</span>
-                  <span className="value">Active</span>
-                </div>
+                {selectedBridge} · {activeTab.toUpperCase()} · Dynamic Structural Intelligence Report
               </div>
             </div>
           </motion.aside>
         )}
+
+        {/* ── Chat Panel column (right) ───────────────────────── */}
+        {activeTab !== 'twin' && (
+          <motion.aside className="chat-panel-col"
+            initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.55 }}>
+            <div className="chat-panel glass-panel">
+              <div className="chat-header">
+                <Bot size={18} color="#00ffff" />
+                <h3>AI ENGINEERING ASSISTANT</h3>
+              </div>
+
+              {/* Example Queries */}
+              <div className="example-queries">
+                <div className="example-queries-label">EXAMPLE QUERIES</div>
+                {EXAMPLE_QUERIES.map((q, i) => (
+                  <button key={i} className="example-query-btn" onClick={() => sendChat(q)} disabled={chatLoading}>
+                    {q}
+                  </button>
+                ))}
+              </div>
+
+              {/* Download Report Button */}
+              <a
+                href={`${API_URL}/api/report/${selectedBridge}`}
+                target="_blank"
+                rel="noreferrer"
+                className="report-download-btn"
+              >
+                <FileDown size={15} />
+                Download PDF Health Report — {selectedBridge}
+              </a>
+
+              {/* Messages */}
+              <div className="chat-messages">
+                {chatMessages.map((msg, i) => (
+                  <motion.div key={i} className={`chat-message ${msg.role}`}
+                    initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
+                    <div className="chat-message-avatar">
+                      {msg.role === 'assistant'
+                        ? <Bot size={14} color="#00ffff" />
+                        : <User size={14} color="#94A3B8" />}
+                    </div>
+                    <div className="chat-message-content">
+                      <pre className="chat-message-text">{msg.content}</pre>
+                      {/* Auto-render download button if message contains a report URL */}
+                      {msg.role === 'assistant' && msg.content.includes('/api/report/') && (() => {
+                        const m = msg.content.match(/http:\/\/[^\s]+\/api\/report\/([^\s]+)/);
+                        return m ? (
+                          <a href={m[0]} target="_blank" rel="noreferrer" className="report-download-btn inline">
+                            <FileDown size={13} /> Download PDF Report
+                          </a>
+                        ) : null;
+                      })()}
+                      <div className="chat-message-time">{msg.timestamp}</div>
+                    </div>
+                  </motion.div>
+                ))}
+                {chatLoading && (
+                  <div className="chat-message assistant">
+                    <div className="chat-message-avatar"><Bot size={14} color="#00ffff" /></div>
+                    <div className="chat-message-content">
+                      <div className="chat-typing"><span /><span /><span /></div>
+                    </div>
+                  </div>
+                )}
+                <div ref={chatEndRef} />
+              </div>
+
+              {/* Input */}
+              <div className="chat-input-row">
+                <input
+                  type="text"
+                  className="chat-input"
+                  placeholder="Ask the AI assistant..."
+                  value={chatInput}
+                  onChange={e => setChatInput(e.target.value)}
+                  onKeyDown={e => e.key === 'Enter' && sendChat()}
+                  disabled={chatLoading}
+                />
+                <button className="chat-send-btn" onClick={() => sendChat()}
+                  disabled={chatLoading || !chatInput.trim()} aria-label="Send">
+                  <Send size={16} />
+                </button>
+              </div>
+            </div>
+          </motion.aside>
+        )}
+
       </div>
     </div>
   );

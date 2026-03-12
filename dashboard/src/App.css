@@ -89,7 +89,7 @@ body {
 }
 
 .dashboard-container {
-  max-width: 1400px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -465,26 +465,45 @@ h1 {
 /* Main Layout Grid */
 .main-layout-grid {
   display: grid;
-  grid-template-columns: 1fr 320px;
+  grid-template-columns: 1fr 280px 360px;
   gap: 24px;
   padding: 0 24px 24px;
+}
+
+.main-layout-grid.twin-layout {
+  grid-template-columns: 1fr;
 }
 
 .analysis-column {
   min-width: 0;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
+  .main-layout-grid {
+    grid-template-columns: 1fr 280px;
+  }
+  .chat-panel-col {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
   .main-layout-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Insights Panel */
+/* Insights Panel — middle column */
 .insights-panel {
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+
+/* Chat column — rightmost */
+.chat-panel-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .insight-card {
@@ -571,4 +590,309 @@ h1 {
 
 .tab-btn {
   white-space: nowrap;
+}
+
+/* ── AI Conclusion Spinner ─────────────────────────────────── */
+.conclusion-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0, 255, 255, 0.2);
+  border-top-color: #00ffff;
+  border-radius: 50%;
+  animation: rotation 0.8s linear infinite;
+  margin-left: auto;
+}
+
+/* ── Chat Panel ────────────────────────────────────────────── */
+.chat-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 20px;
+  max-height: 680px;
+  overflow: hidden;
+  border-left: 4px solid #3B82F6 !important;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.chat-header h3 {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* ── Example Queries ───────────────────────────────────────── */
+.example-queries {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.example-queries-label {
+  font-size: 0.7rem;
+  font-family: 'Share Tech Mono', monospace;
+  color: var(--text-secondary);
+  opacity: 0.7;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.example-query-btn {
+  background: rgba(59, 130, 246, 0.08);
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-family: var(--font-base);
+  padding: 6px 10px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.example-query-btn:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: var(--text-primary);
+  transform: translateX(3px);
+}
+
+.example-query-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Chat Messages ─────────────────────────────────────────── */
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding-right: 4px;
+  min-height: 0;
+  max-height: 260px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.1) transparent;
+}
+
+.chat-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.1);
+  border-radius: 2px;
+}
+
+.chat-message {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.chat-message.user {
+  flex-direction: row-reverse;
+}
+
+.chat-message-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chat-message.assistant .chat-message-avatar {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid rgba(0, 255, 255, 0.2);
+}
+
+.chat-message.user .chat-message-avatar {
+  background: rgba(148, 163, 184, 0.1);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.chat-message-content {
+  max-width: 88%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.chat-message.user .chat-message-content {
+  align-items: flex-end;
+}
+
+.chat-message-text {
+  font-size: 0.78rem;
+  line-height: 1.55;
+  padding: 8px 12px;
+  border-radius: 12px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: var(--font-base);
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.chat-message.assistant .chat-message-text {
+  background: rgba(0, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  color: var(--text-secondary);
+  border-radius: 4px 12px 12px 12px;
+}
+
+.chat-message.user .chat-message-text {
+  background: rgba(59, 130, 246, 0.18);
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  color: var(--text-primary);
+  border-radius: 12px 4px 12px 12px;
+}
+
+.chat-message-time {
+  font-size: 0.65rem;
+  color: var(--text-secondary);
+  opacity: 0.5;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* Typing indicator */
+.chat-typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: rgba(0, 255, 255, 0.06);
+  border: 1px solid rgba(0, 255, 255, 0.12);
+  border-radius: 4px 12px 12px 12px;
+}
+
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00ffff;
+  opacity: 0.6;
+  animation: typing-bounce 1.2s ease-in-out infinite;
+}
+
+.chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
+  30% { transform: translateY(-6px); opacity: 1; }
+}
+
+/* ── Chat Input Row ─────────────────────────────────────────── */
+.chat-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex: 1;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid var(--glass-border);
+  border-radius: 10px;
+  color: var(--text-primary);
+  font-family: var(--font-base);
+  font-size: 0.82rem;
+  padding: 9px 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.chat-input:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.12);
+}
+
+.chat-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.5;
+}
+
+.chat-input:disabled {
+  opacity: 0.4;
+}
+
+.chat-send-btn {
+  background: rgba(59, 130, 246, 0.2);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  border-radius: 10px;
+  color: #60A5FA;
+  padding: 9px 11px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.chat-send-btn:hover:not(:disabled) {
+  background: rgba(59, 130, 246, 0.35);
+  border-color: rgba(59, 130, 246, 0.6);
+  transform: scale(1.05);
+}
+
+.chat-send-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── PDF Report Download Button ──────────────────────────────── */
+.report-download-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: linear-gradient(135deg, rgba(0,180,120,0.14), rgba(0,255,180,0.08));
+  border: 1px solid rgba(0,200,140,0.35);
+  border-radius: 10px;
+  color: #00c896;
+  font-size: 0.78rem;
+  font-family: 'Share Tech Mono', monospace;
+  padding: 8px 13px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+  flex-shrink: 0;
+  letter-spacing: 0.04em;
+}
+
+.report-download-btn:hover {
+  background: linear-gradient(135deg, rgba(0,200,140,0.25), rgba(0,255,180,0.14));
+  border-color: rgba(0,220,160,0.6);
+  color: #00ffba;
+  transform: translateX(2px);
+}
+
+.report-download-btn.inline {
+  display: inline-flex;
+  margin-top: 6px;
+  margin-bottom: 2px;
+  padding: 5px 10px;
+  font-size: 0.73rem;
 }
