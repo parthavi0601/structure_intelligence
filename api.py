@@ -51,6 +51,7 @@ def get_behavioral_metrics(bridge_id: str):
             'Behavioral_State_Cluster', 
             'degradation_score', 
             'forecast_score_next_30d',
+            'Predicted_Risk_Score',
             'structural_condition',
             'Autoencoder_Anomaly_Score',
             'Anomaly_Alert_Flag'
