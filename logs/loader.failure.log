@@ -1,0 +1,27 @@
+2026-03-12 10:35:57 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:35:57 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:35:57 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:36:33 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:36:33 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:36:33 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:38:28 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:38:28 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:38:28 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:39:43 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:39:43 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:39:43 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:40:04 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:40:04 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:40:04 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:41:16 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:41:16 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:41:16 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:42:17 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:42:17 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:42:17 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:42:52 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:42:52 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:42:52 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:43:40 | INFO     | loader.failure | Loading failure prediction dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\4 [failure prediction]\bridge_dataset.csv
+2026-03-12 10:43:40 | INFO     | loader.failure | Raw shape: (1340, 15)
+2026-03-12 10:43:40 | INFO     | loader.failure | [failure [raw]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}

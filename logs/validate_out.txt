@@ -1,0 +1,1900 @@
+﻿2026-03-12 10:44:31 | INFO     | validate | ============================================================
+2026-03-12 10:44:31 | INFO     | validate |   PIPELINE VALIDATION REPORT
+2026-03-12 10:44:31 | INFO     | validate | ============================================================
+2026-03-12 10:44:31 | INFO     | validate | 
+[SENSOR_FUSION]
+2026-03-12 10:44:31 | INFO     | validate |   Γ£à PASS  Output file exists: sensor_fusion.parquet
+python : --- Logging 
+error ---
+At line:1 char:32
++ ... 
+OENCODING='utf-8'; 
+python -W ignore 
+pipeline/validate.py 
+2>&1 | Out-F ...
++                      
+  ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (--- Logging e   
+ rror ---:String) [    
+], RemoteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 43, in 
+validate_dataset
+    add(check(path.exis
+ts(), f"Output file 
+exists: {path.name}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Output file exists: 
+sensor_fusion.parquet'
+Arguments: ()
+2026-03-12 10:44:31 | INFO     | validate |   Γ£à PASS  Parquet loaded OK
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 54, in 
+validate_dataset
+    add(check(True, 
+f"Parquet loaded OK"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Parquet loaded OK'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:31 | INFO     | validate |   Γ£à PASS  Non-empty rows: 200
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 57, in 
+validate_dataset
+    
+add(check(df.shape[0] 
+> 0, f"Non-empty rows: 
+{df.shape[0]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty rows: 200'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:31 | INFO     | validate |   Γ£à PASS  Non-empty cols: 183
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 58, in 
+validate_dataset
+    
+add(check(df.shape[1] 
+> 0, f"Non-empty cols: 
+{df.shape[1]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty cols: 183'
+Arguments: ()
+2026-03-12 10:44:31 | INFO     | validate |   Γ£à PASS  Zero NaN values (found 0)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 62, in 
+validate_dataset
+    
+add(check(total_nan == 
+0, f"Zero NaN values 
+(found {total_nan})"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Zero NaN values (found 
+0)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Max abs numeric value is reasonable (9.950 < 1000)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 76, in 
+validate_dataset
+    
+add(check(reasonable, 
+f"Max abs numeric 
+value is reasonable 
+({max_abs_val:.3f} < 
+1000)"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Max abs numeric value 
+is reasonable (9.950 < 
+1000)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Engineered feature columns present
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 88, in 
+validate_dataset
+    
+add(check(has_feats, 
+f"Engineered feature 
+columns present"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Engineered feature 
+columns present'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (200, 183) | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:44:32 | INFO     | validate | 
+[BEHAVIOUR]
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Output file exists: behaviour.parquet
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 43, in 
+validate_dataset
+    add(check(path.exis
+ts(), f"Output file 
+exists: {path.name}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Output file exists: 
+behaviour.parquet'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Parquet loaded OK
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 54, in 
+validate_dataset
+    add(check(True, 
+f"Parquet loaded OK"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Parquet loaded OK'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty rows: 652
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 57, in 
+validate_dataset
+    
+add(check(df.shape[0] 
+> 0, f"Non-empty rows: 
+{df.shape[0]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty rows: 652'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty cols: 33
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 58, in 
+validate_dataset
+    
+add(check(df.shape[1] 
+> 0, f"Non-empty cols: 
+{df.shape[1]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty cols: 33'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Zero NaN values (found 0)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 62, in 
+validate_dataset
+    
+add(check(total_nan == 
+0, f"Zero NaN values 
+(found {total_nan})"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Zero NaN values (found 
+0)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ¥î FAIL  Max abs numeric value is reasonable (77942.958 < 1000)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u274c' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 76, in 
+validate_dataset
+    
+add(check(reasonable, 
+f"Max abs numeric 
+value is reasonable 
+({max_abs_val:.3f} < 
+1000)"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ¥î FAIL  
+Max abs numeric value 
+is reasonable 
+(77942.958 < 1000)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Engineered feature columns present
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 88, in 
+validate_dataset
+    
+add(check(has_feats, 
+f"Engineered feature 
+columns present"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Engineered feature 
+columns present'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (652, 33) | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:44:32 | INFO     | validate | 
+[ANOMALY]
+2026-03-12 10:44:32 | INFO     | validate |   Γ¥î FAIL  Output file exists: anomaly.parquet
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u274c' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 43, in 
+validate_dataset
+    add(check(path.exis
+ts(), f"Output file 
+exists: {path.name}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ¥î FAIL  
+Output file exists: 
+anomaly.parquet'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate | 
+[FAILURE]
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Output file exists: failure_prediction.parquet
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 43, in 
+validate_dataset
+    add(check(path.exis
+ts(), f"Output file 
+exists: {path.name}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Output file exists: fai
+lure_prediction.parquet
+'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Parquet loaded OK
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 54, in 
+validate_dataset
+    add(check(True, 
+f"Parquet loaded OK"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Parquet loaded OK'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty rows: 1,340
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 57, in 
+validate_dataset
+    
+add(check(df.shape[0] 
+> 0, f"Non-empty rows: 
+{df.shape[0]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty rows: 1,340'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty cols: 20
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 58, in 
+validate_dataset
+    
+add(check(df.shape[1] 
+> 0, f"Non-empty cols: 
+{df.shape[1]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty cols: 20'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Zero NaN values (found 0)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 62, in 
+validate_dataset
+    
+add(check(total_nan == 
+0, f"Zero NaN values 
+(found {total_nan})"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Zero NaN values (found 
+0)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Max abs numeric value is reasonable (2.803 < 1000)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 76, in 
+validate_dataset
+    
+add(check(reasonable, 
+f"Max abs numeric 
+value is reasonable 
+({max_abs_val:.3f} < 
+1000)"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Max abs numeric value 
+is reasonable (2.803 < 
+1000)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ¥î FAIL  Engineered feature columns present
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u274c' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 88, in 
+validate_dataset
+    
+add(check(has_feats, 
+f"Engineered feature 
+columns present"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ¥î FAIL  
+Engineered feature 
+columns present'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (1340, 20) | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:44:32 | INFO     | validate | 
+[DIGITAL_TWIN]
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Output file exists: digital_twin.parquet
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 43, in 
+validate_dataset
+    add(check(path.exis
+ts(), f"Output file 
+exists: {path.name}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Output file exists: 
+digital_twin.parquet'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Parquet loaded OK
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 54, in 
+validate_dataset
+    add(check(True, 
+f"Parquet loaded OK"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Parquet loaded OK'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty rows: 43,200
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 57, in 
+validate_dataset
+    
+add(check(df.shape[0] 
+> 0, f"Non-empty rows: 
+{df.shape[0]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty rows: 43,200'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Non-empty cols: 85
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 58, in 
+validate_dataset
+    
+add(check(df.shape[1] 
+> 0, f"Non-empty cols: 
+{df.shape[1]:,}"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Non-empty cols: 85'
+Arguments: ()
+--- Logging error ---
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Zero NaN values (found 0)
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 62, in 
+validate_dataset
+    
+add(check(total_nan == 
+0, f"Zero NaN values 
+(found {total_nan})"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Zero NaN values (found 
+0)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Max abs numeric value is reasonable (444.800 < 1000)
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 76, in 
+validate_dataset
+    
+add(check(reasonable, 
+f"Max abs numeric 
+value is reasonable 
+({max_abs_val:.3f} < 
+1000)"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Max abs numeric value 
+is reasonable (444.800 
+< 1000)'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ£à PASS  Engineered feature columns present
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2705' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 102, in main
+    r = 
+validate_dataset(name, 
+path)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 88, in 
+validate_dataset
+    
+add(check(has_feats, 
+f"Engineered feature 
+columns present"))
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 34, in check
+    log.info(f"  
+{status}  {message}")
+Message: '  Γ£à PASS  
+Engineered feature 
+columns present'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (43200, 85) | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+--- Logging error ---
+2026-03-12 10:44:32 | INFO     | validate | 
+============================================================
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u274c' in position 
+46: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 116, in 
+<module>
+    main()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\validate.
+py", line 111, in main
+    log.info("  Γ¥î 
+SOME CHECKS FAILED ΓÇö 
+review logs above")
+Message: '  Γ¥î SOME 
+CHECKS FAILED ΓÇö 
+review logs above'
+Arguments: ()
+2026-03-12 10:44:32 | INFO     | validate |   Γ¥î SOME CHECKS FAILED ΓÇö review logs above
+2026-03-12 10:44:32 | INFO     | validate | ============================================================

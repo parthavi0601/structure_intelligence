@@ -1,0 +1,320 @@
+2026-03-12 10:35:54 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:54 | INFO     | run_pipeline |   STRUCTURE INTELLIGENCE — DATA PIPELINE
+2026-03-12 10:35:54 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:54 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:54 | INFO     | run_pipeline |   PROCESSING DATASET: SENSOR_FUSION
+2026-03-12 10:35:54 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:55 | INFO     | run_pipeline | [sensor_fusion [loaded]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:35:55 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:55 | INFO     | run_pipeline |   PROCESSING DATASET: BEHAVIOUR
+2026-03-12 10:35:55 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:56 | INFO     | run_pipeline | [behaviour [loaded]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:35:57 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:57 | INFO     | run_pipeline |   PROCESSING DATASET: ANOMALY
+2026-03-12 10:35:57 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:57 | INFO     | run_pipeline | [anomaly [loaded]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:35:57 | ERROR    | run_pipeline |   [anomaly] FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+2026-03-12 10:35:57 | ERROR    | run_pipeline | Traceback (most recent call last):
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\run_pipeline.py", line 60, in run_single
+    df = engineer_features(df, dataset_name=name, fit=fit, scaler_dir=SCALERS_DIR)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 232, in engineer_features
+    df = _engineer_anomaly(df, log, fit=fit, scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 117, in _engineer_anomaly
+    pca_vals = pca.fit_transform(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 474, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 547, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 561, in _fit_full
+    raise ValueError(
+ValueError: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+
+2026-03-12 10:35:57 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:57 | INFO     | run_pipeline |   PROCESSING DATASET: FAILURE
+2026-03-12 10:35:57 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:57 | INFO     | run_pipeline | [failure [loaded]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:35:57 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:57 | INFO     | run_pipeline |   PROCESSING DATASET: DIGITAL_TWIN
+2026-03-12 10:35:57 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:58 | INFO     | run_pipeline | [digital_twin [loaded]] shape=(43200, 53) | NaN=113315 | numeric_cols=51 | dtypes: {dtype('float32'): 45, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1, CategoricalDtype(categories=['Cables', 'Deck', 'Piers'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:35:59 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:35:59 | INFO     | run_pipeline |   PIPELINE SUMMARY
+2026-03-12 10:35:59 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:35:59 | INFO     | run_pipeline |   Dataset              Status               Shape                Time(s)
+2026-03-12 10:35:59 | INFO     | run_pipeline |   -------------------- -------------------- -------------------- ----------
+2026-03-12 10:35:59 | INFO     | run_pipeline | 
+  Total time: 4.5s
+2026-03-12 10:35:59 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline |   STRUCTURE INTELLIGENCE — DATA PIPELINE
+2026-03-12 10:36:32 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline |   PROCESSING DATASET: SENSOR_FUSION
+2026-03-12 10:36:32 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline | [sensor_fusion [loaded]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:36:32 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline |   PROCESSING DATASET: BEHAVIOUR
+2026-03-12 10:36:32 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:32 | INFO     | run_pipeline | [behaviour [loaded]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:36:33 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:33 | INFO     | run_pipeline |   PROCESSING DATASET: ANOMALY
+2026-03-12 10:36:33 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:33 | INFO     | run_pipeline | [anomaly [loaded]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:36:33 | ERROR    | run_pipeline |   [anomaly] FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+2026-03-12 10:36:33 | ERROR    | run_pipeline | Traceback (most recent call last):
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\run_pipeline.py", line 60, in run_single
+    df = engineer_features(df, dataset_name=name, fit=fit, scaler_dir=SCALERS_DIR)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 232, in engineer_features
+    df = _engineer_anomaly(df, log, fit=fit, scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 117, in _engineer_anomaly
+    pca_vals = pca.fit_transform(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 474, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 547, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 561, in _fit_full
+    raise ValueError(
+ValueError: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+
+2026-03-12 10:36:33 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:33 | INFO     | run_pipeline |   PROCESSING DATASET: FAILURE
+2026-03-12 10:36:33 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:33 | INFO     | run_pipeline | [failure [loaded]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:36:33 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:33 | INFO     | run_pipeline |   PROCESSING DATASET: DIGITAL_TWIN
+2026-03-12 10:36:33 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:34 | INFO     | run_pipeline | [digital_twin [loaded]] shape=(43200, 53) | NaN=113315 | numeric_cols=51 | dtypes: {dtype('float32'): 45, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1, CategoricalDtype(categories=['Cables', 'Deck', 'Piers'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:36:34 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:36:34 | INFO     | run_pipeline |   PIPELINE SUMMARY
+2026-03-12 10:36:34 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:36:34 | INFO     | run_pipeline |   Dataset              Status               Shape                Time(s)
+2026-03-12 10:36:34 | INFO     | run_pipeline |   -------------------- -------------------- -------------------- ----------
+2026-03-12 10:36:34 | INFO     | run_pipeline | 
+  Total time: 2.55s
+2026-03-12 10:36:34 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:26 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:26 | INFO     | run_pipeline |   STRUCTURE INTELLIGENCE — DATA PIPELINE
+2026-03-12 10:38:26 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:26 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:26 | INFO     | run_pipeline |   PROCESSING DATASET: SENSOR_FUSION
+2026-03-12 10:38:26 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:26 | INFO     | run_pipeline | [sensor_fusion [loaded]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:38:27 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:27 | INFO     | run_pipeline |   PROCESSING DATASET: BEHAVIOUR
+2026-03-12 10:38:27 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:27 | INFO     | run_pipeline | [behaviour [loaded]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:38:27 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:27 | INFO     | run_pipeline |   PROCESSING DATASET: ANOMALY
+2026-03-12 10:38:27 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:27 | INFO     | run_pipeline | [anomaly [loaded]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:38:28 | ERROR    | run_pipeline |   [anomaly] FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+2026-03-12 10:38:28 | ERROR    | run_pipeline | Traceback (most recent call last):
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\run_pipeline.py", line 60, in run_single
+    df = engineer_features(df, dataset_name=name, fit=fit, scaler_dir=SCALERS_DIR)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 232, in engineer_features
+    df = _engineer_anomaly(df, log, fit=fit, scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 117, in _engineer_anomaly
+    pca_vals = pca.fit_transform(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 474, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 547, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 561, in _fit_full
+    raise ValueError(
+ValueError: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+
+2026-03-12 10:38:28 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:28 | INFO     | run_pipeline |   PROCESSING DATASET: FAILURE
+2026-03-12 10:38:28 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:28 | INFO     | run_pipeline | [failure [loaded]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:38:28 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:28 | INFO     | run_pipeline |   PROCESSING DATASET: DIGITAL_TWIN
+2026-03-12 10:38:28 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:28 | INFO     | run_pipeline | [digital_twin [loaded]] shape=(43200, 53) | NaN=113315 | numeric_cols=51 | dtypes: {dtype('float32'): 45, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1, CategoricalDtype(categories=['Cables', 'Deck', 'Piers'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:38:29 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:38:29 | INFO     | run_pipeline |   PIPELINE SUMMARY
+2026-03-12 10:38:29 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:38:29 | INFO     | run_pipeline |   Dataset              Status               Shape                Time(s)
+2026-03-12 10:38:29 | INFO     | run_pipeline |   -------------------- -------------------- -------------------- ----------
+2026-03-12 10:38:29 | INFO     | run_pipeline | 
+  Total time: 2.49s
+2026-03-12 10:38:29 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline |   STRUCTURE INTELLIGENCE — DATA PIPELINE
+2026-03-12 10:42:51 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline |   PROCESSING DATASET: SENSOR_FUSION
+2026-03-12 10:42:51 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline | [sensor_fusion [loaded]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:42:51 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline |   PROCESSING DATASET: BEHAVIOUR
+2026-03-12 10:42:51 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:51 | INFO     | run_pipeline | [behaviour [loaded]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:42:52 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:52 | INFO     | run_pipeline |   PROCESSING DATASET: ANOMALY
+2026-03-12 10:42:52 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:52 | INFO     | run_pipeline | [anomaly [loaded]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:42:52 | ERROR    | run_pipeline |   [anomaly] FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+2026-03-12 10:42:52 | ERROR    | run_pipeline | Traceback (most recent call last):
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\run_pipeline.py", line 60, in run_single
+    df = engineer_features(df, dataset_name=name, fit=fit, scaler_dir=SCALERS_DIR)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 232, in engineer_features
+    df = _engineer_anomaly(df, log, fit=fit, scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 117, in _engineer_anomaly
+    pca_vals = pca.fit_transform(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 474, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 547, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 561, in _fit_full
+    raise ValueError(
+ValueError: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+
+2026-03-12 10:42:52 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:52 | INFO     | run_pipeline |   PROCESSING DATASET: FAILURE
+2026-03-12 10:42:52 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:52 | INFO     | run_pipeline | [failure [loaded]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:42:52 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:52 | INFO     | run_pipeline |   PROCESSING DATASET: DIGITAL_TWIN
+2026-03-12 10:42:52 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:53 | INFO     | run_pipeline | [digital_twin [loaded]] shape=(43200, 53) | NaN=113315 | numeric_cols=51 | dtypes: {dtype('float32'): 45, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1, CategoricalDtype(categories=['Cables', 'Deck', 'Piers'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:42:54 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:42:54 | INFO     | run_pipeline |   PIPELINE SUMMARY
+2026-03-12 10:42:54 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:42:54 | INFO     | run_pipeline |   Dataset              Status               Shape                Time(s)
+2026-03-12 10:42:54 | INFO     | run_pipeline |   -------------------- -------------------- -------------------- ----------
+2026-03-12 10:42:54 | INFO     | run_pipeline | 
+  Total time: 3.82s
+2026-03-12 10:42:54 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:38 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:38 | INFO     | run_pipeline |   STRUCTURE INTELLIGENCE — DATA PIPELINE
+2026-03-12 10:43:38 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:38 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:38 | INFO     | run_pipeline |   PROCESSING DATASET: SENSOR_FUSION
+2026-03-12 10:43:38 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:38 | INFO     | run_pipeline | [sensor_fusion [loaded]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:43:39 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:39 | INFO     | run_pipeline |   PROCESSING DATASET: BEHAVIOUR
+2026-03-12 10:43:39 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:39 | INFO     | run_pipeline | [behaviour [loaded]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:43:39 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:39 | INFO     | run_pipeline |   PROCESSING DATASET: ANOMALY
+2026-03-12 10:43:39 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:39 | INFO     | run_pipeline | [anomaly [loaded]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:43:40 | ERROR    | run_pipeline |   [anomaly] FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+2026-03-12 10:43:40 | ERROR    | run_pipeline | Traceback (most recent call last):
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\run_pipeline.py", line 60, in run_single
+    df = engineer_features(df, dataset_name=name, fit=fit, scaler_dir=SCALERS_DIR)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 232, in engineer_features
+    df = _engineer_anomaly(df, log, fit=fit, scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\pipeline\processors\feature_engineer.py", line 117, in _engineer_anomaly
+    pca_vals = pca.fit_transform(X)
+               ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\utils\_set_output.py", line 313, in wrapped
+    data_to_wrap = f(self, X, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 474, in fit_transform
+    U, S, _, X, x_is_centered, xp = self._fit(X)
+                                    ^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 547, in _fit
+    return self._fit_full(X, n_components, xp, is_array_api_compliant)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\anaconda3\Lib\site-packages\sklearn\decomposition\_pca.py", line 561, in _fit_full
+    raise ValueError(
+ValueError: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+
+2026-03-12 10:43:40 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:40 | INFO     | run_pipeline |   PROCESSING DATASET: FAILURE
+2026-03-12 10:43:40 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:40 | INFO     | run_pipeline | [failure [loaded]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 10, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:43:40 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:40 | INFO     | run_pipeline |   PROCESSING DATASET: DIGITAL_TWIN
+2026-03-12 10:43:40 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:40 | INFO     | run_pipeline | [digital_twin [loaded]] shape=(43200, 53) | NaN=113315 | numeric_cols=51 | dtypes: {dtype('float32'): 45, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1, CategoricalDtype(categories=['Cables', 'Deck', 'Piers'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:43:41 | INFO     | run_pipeline | 
+============================================================
+2026-03-12 10:43:41 | INFO     | run_pipeline |   PIPELINE SUMMARY
+2026-03-12 10:43:41 | INFO     | run_pipeline | ============================================================
+2026-03-12 10:43:41 | INFO     | run_pipeline |   Dataset              Status               Shape                Time(s)
+2026-03-12 10:43:41 | INFO     | run_pipeline |   -------------------- -------------------- -------------------- ----------
+2026-03-12 10:43:41 | INFO     | run_pipeline | 
+  Total time: 2.76s
+2026-03-12 10:43:41 | INFO     | run_pipeline | ============================================================

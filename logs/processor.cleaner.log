@@ -1,0 +1,249 @@
+2026-03-12 10:35:55 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:35:55 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:35:55 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:35:55 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:35:55 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:35:55 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:35:56 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:35:56 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:35:56 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:35:56 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:35:56 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:35:57 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:35:57 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:35:57 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:35:57 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:35:57 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:35:58 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:35:58 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:35:58 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:35:58 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:35:58 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:35:58 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:36:32 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:36:32 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:36:32 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:36:32 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:36:32 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:36:33 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:36:33 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:36:33 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:36:33 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:36:33 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:36:34 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:36:34 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:36:34 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:36:34 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:36:34 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:36:34 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:38:26 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:38:26 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:38:26 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:38:26 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:38:26 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:38:26 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:38:27 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:38:27 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:38:27 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:38:27 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:38:27 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:38:27 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:38:27 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:38:27 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:38:28 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:38:28 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:38:28 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:38:28 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:38:28 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:38:28 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:39:39 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:39:39 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:39:39 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:39:39 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:39:39 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:39:39 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:39:40 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:39:40 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:39:40 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:39:40 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:39:40 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:39:42 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:39:42 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:39:42 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:39:43 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:39:43 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:39:43 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:39:43 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:39:43 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:39:43 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:39:43 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:39:44 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:39:44 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:39:44 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:39:44 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:39:44 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:39:44 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:40:03 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:40:03 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:40:03 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:03 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:40:03 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:40:04 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:40:04 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:40:04 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:04 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:40:04 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:40:04 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:40:05 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:05 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:40:05 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:05 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:40:05 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:40:32 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:40:32 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:40:32 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:40:32 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:40:32 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:40:32 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:41:15 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:15 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:41:15 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:41:16 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:41:16 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:16 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:16 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:41:16 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:41:17 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:41:17 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:17 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:41:17 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:17 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:41:17 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:41:54 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:41:54 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:54 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:41:54 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:41:54 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:42:17 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:42:17 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:42:17 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:17 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:42:17 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:42:35 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:42:35 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:35 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:42:35 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:35 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:42:35 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:42:51 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:51 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:42:51 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:42:52 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:42:52 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:42:52 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:52 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:42:52 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:42:53 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:42:53 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:42:53 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:42:53 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:42:54 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:42:54 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
+2026-03-12 10:43:38 | INFO     | processor.cleaner | [sensor_fusion] Starting cleaning. Input shape: (200, 34)
+2026-03-12 10:43:38 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:43:38 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['operator_notes']
+2026-03-12 10:43:38 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:43:38 | INFO     | processor.cleaner |   Outlier clipping: 74 values clipped across 31 columns
+2026-03-12 10:43:38 | INFO     | processor.cleaner | [sensor_fusion [cleaned]] shape=(200, 33) | NaN=0 | numeric_cols=31 | dtypes: {dtype('float64'): 21, dtype('float32'): 5, dtype('int64'): 5, dtype('O'): 2}
+2026-03-12 10:43:39 | INFO     | processor.cleaner | [behaviour] Starting cleaning. Input shape: (66344, 7)
+2026-03-12 10:43:39 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:43:39 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:43:39 | INFO     | processor.cleaner |   Outlier clipping: 44984 values clipped across 5 columns
+2026-03-12 10:43:39 | INFO     | processor.cleaner | [behaviour [cleaned]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:43:39 | INFO     | processor.cleaner | [anomaly] Starting cleaning. Input shape: (4, 216)
+2026-03-12 10:43:39 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:43:39 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   Outlier clipping: 0 values clipped across 216 columns
+2026-03-12 10:43:40 | INFO     | processor.cleaner | [anomaly [cleaned]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:43:40 | INFO     | processor.cleaner | [failure] Starting cleaning. Input shape: (1340, 14)
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   Outlier clipping: 39 values clipped across 11 columns
+2026-03-12 10:43:40 | INFO     | processor.cleaner | [failure [cleaned]] shape=(1340, 14) | NaN=0 | numeric_cols=11 | dtypes: {dtype('float32'): 6, dtype('float64'): 4, dtype('O'): 3, dtype('int64'): 1}
+2026-03-12 10:43:40 | INFO     | processor.cleaner | [digital_twin] Starting cleaning. Input shape: (43200, 53)
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   Dedup: removed 0 rows
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   Dropping 1 columns with >50% NaN: ['Vibration_Anomaly_Location']
+2026-03-12 10:43:40 | INFO     | processor.cleaner |   After imputation: 0 NaN values remain
+2026-03-12 10:43:41 | INFO     | processor.cleaner |   Outlier clipping: 23895 values clipped across 45 columns
+2026-03-12 10:43:41 | INFO     | processor.cleaner | [digital_twin [cleaned]] shape=(43200, 52) | NaN=0 | numeric_cols=51 | dtypes: {dtype('float64'): 26, dtype('float32'): 19, dtype('int8'): 6, CategoricalDtype(categories=['Critical', 'Healthy', 'Stressed'], ordered=False, categories_dtype=object): 1}
