@@ -22,24 +22,24 @@ const EXAMPLE_QUERIES = [
 ];
 
 const fadeInUp = {
-  hidden:  { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
 };
 const staggerContainer = {
-  hidden:  { opacity: 0 },
+  hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { staggerChildren: 0.08 } }
 };
 
 function App() {
-  const [bridges, setBridges]               = useState([]);
+  const [bridges, setBridges] = useState([]);
   const [selectedBridge, setSelectedBridge] = useState('');
-  const [metrics, setMetrics]               = useState([]);
-  const [loading, setLoading]               = useState(false);
-  const [activeTab, setActiveTab]           = useState('behavior');
-  const [theme, setTheme]                   = useState('dark');
-  const [tick, setTick]                     = useState(0);
+  const [metrics, setMetrics] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [activeTab, setActiveTab] = useState('behavior');
+  const [theme, setTheme] = useState('dark');
+  const [tick, setTick] = useState(0);
 
-  const [aiConclusion, setAiConclusion]         = useState('');
+  const [aiConclusion, setAiConclusion] = useState('');
   const [conclusionLoading, setConclusionLoading] = useState(false);
 
   const [chatMessages, setChatMessages] = useState([{
@@ -47,7 +47,7 @@ function App() {
     content: 'Hello, Engineer. I am your AI Structural Intelligence Assistant. Ask me anything about the monitored infrastructure — anomalies, risk scores, maintenance priorities, or behavioral patterns.',
     timestamp: new Date().toLocaleTimeString(),
   }]);
-  const [chatInput, setChatInput]   = useState('');
+  const [chatInput, setChatInput] = useState('');
   const [chatLoading, setChatLoading] = useState(false);
   const chatEndRef = useRef(null);
 
@@ -113,7 +113,7 @@ function App() {
     setChatMessages(prev => [...prev, userMsg]);
     setChatLoading(true);
     try {
-      const res  = await fetch(`${API_URL}/api/chat`, {
+      const res = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ message: text }),
@@ -145,9 +145,9 @@ function App() {
 
   const TABS = [
     { id: 'behavior', label: 'STRUCTURE BEHAVIOR', icon: <Activity size={14} /> },
-    { id: 'anomaly',  label: 'ANOMALY DETECTION',  icon: <Zap size={14} /> },
-    { id: 'risk',     label: 'RISK PREDICTION',    icon: <ShieldAlert size={14} /> },
-    { id: 'twin',     label: 'DIGITAL TWIN',       icon: <Cpu size={14} /> },
+    { id: 'anomaly', label: 'ANOMALY DETECTION', icon: <Zap size={14} /> },
+    { id: 'risk', label: 'RISK PREDICTION', icon: <ShieldAlert size={14} /> },
+    { id: 'twin', label: 'DIGITAL TWIN', icon: <Cpu size={14} /> },
   ];
 
   // ─── JSX ────────────────────────────────────────────────────────────────────
@@ -228,11 +228,11 @@ function App() {
                       <AreaChart data={metrics} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="gradShift" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%"  stopColor="#00ffff" stopOpacity={0.35} />
+                            <stop offset="5%" stopColor="#00ffff" stopOpacity={0.35} />
                             <stop offset="95%" stopColor="#00ffff" stopOpacity={0} />
                           </linearGradient>
                           <linearGradient id="gradDeg" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%"  stopColor="#00ff9d" stopOpacity={0.25} />
+                            <stop offset="5%" stopColor="#00ff9d" stopOpacity={0.25} />
                             <stop offset="95%" stopColor="#00ff9d" stopOpacity={0} />
                           </linearGradient>
                         </defs>
@@ -325,7 +325,7 @@ function App() {
                       <AreaChart data={metrics} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                         <defs>
                           <linearGradient id="gradRisk" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="5%"  stopColor="#ff2d55" stopOpacity={0.4} />
+                            <stop offset="5%" stopColor="#ff2d55" stopOpacity={0.4} />
                             <stop offset="95%" stopColor="#ff2d55" stopOpacity={0} />
                           </linearGradient>
                         </defs>

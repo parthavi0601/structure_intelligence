@@ -863,3 +863,9 @@ async def chat_with_agent(req: ChatRequest):
     except Exception as e:
         import traceback; traceback.print_exc()
         return {"response": f"⚠️ Agent Error: {e}"}
+        # so we feed it to the Agent Interface directly.
+        response_text = await asyncio.to_thread(run_query, req.message)
+        return {"response": response_text}
+    except Exception as e:
+        import traceback; traceback.print_exc()
+        return {"response": f"⚠️ Agent Error: {e}"}
