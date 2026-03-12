@@ -1,0 +1,433 @@
+================================================================================
+  STRUCTURE INTELLIGENCE — DATA PIPELINE EXPLANATION
+  Problem Statement 2 | Bridge Structural Health Monitoring
+================================================================================
+
+HOW TO RUN
+----------
+  $env:PYTHONIOENCODING='utf-8'      # Windows only — prevents emoji crash
+  python pipeline/run_pipeline.py    # runs the full pipeline
+  python pipeline/validate.py        # checks the outputs are correct
+
+
+WHAT THIS PIPELINE DOES (BIG PICTURE)
+--------------------------------------
+Takes 5 raw bridge sensor datasets in different formats (CSV and TXT),
+cleans them, normalizes them, extracts machine-learning-ready features,
+and saves them as Parquet files that any future ML model can load in
+under a second.
+
+Raw Data --> Clean --> Normalize --> Feature Engineering --> .parquet files
+
+
+================================================================================
+  FILE-BY-FILE EXPLANATION
+================================================================================
+
+--------------------------------------------------------------------------------
+  requirements.txt
+--------------------------------------------------------------------------------
+Lists all Python libraries the pipeline needs. Install with:
+  pip install -r requirements.txt
+
+  pandas      — loads and manipulates tabular data (like spreadsheets in code)
+  numpy       — fast math operations on arrays
+  scipy       — signal processing (FFT, statistics)
+  scikit-learn — machine learning tools (scalers, PCA)
+  pyarrow     — reads/writes .parquet files (the output format)
+  pywavelets  — wavelet transforms (not used yet, available for future tasks)
+  tqdm        — progress bars
+  joblib      — saves Python objects (scalers) to .pkl files
+
+
+--------------------------------------------------------------------------------
+  pipeline/config.py  (THE SETTINGS FILE)
+--------------------------------------------------------------------------------
+A single file where ALL configuration lives. Nothing is hardcoded anywhere
+else in the project. If a file path changes, you change it here only.
+
+Key settings:
+  PATHS            — where each raw dataset file is on disk
+  OUTPUT_FILES     — where to save processed .parquet files
+  SCALERS_DIR      — where to save fitted scaler .pkl files
+  MINMAX_COLUMNS   — which columns get scaled to 0-1 range (scores/indices)
+  EXCLUDE_FROM_SCALING — columns that should NEVER be normalized
+                          (IDs, labels, timestamps, flags)
+  ROLLING_WINDOWS  — [10, 30, 60] minutes for rolling statistics
+  LAG_STEPS        — [1, 6, 12, 24] hours for lag features
+  PCA_COMPONENTS   — 30 dimensions for anomaly dataset reduction
+  VIBRATION_WINDOW_SAMPLES — 200 samples = 1 second at 200 Hz
+  OUTLIER_IQR_FACTOR — 1.5 (standard IQR multiplier for outlier clipping)
+
+
+--------------------------------------------------------------------------------
+  pipeline/utils.py  (SHARED HELPERS)
+--------------------------------------------------------------------------------
+Utility functions used by every other file in the pipeline.
+
+  get_logger(name)
+    Creates a logger that prints to both the terminal AND writes to a
+    .log file in the logs/ folder. Every module gets its own log file
+    (e.g. logs/processor.cleaner.log).
+
+  timeit
+    A decorator you put on a function to automatically measure and log
+    how long it takes to run.
+
+  save_parquet(df, path)
+    Saves a DataFrame to a .parquet file. Parquet is like CSV but:
+      - 10-100x faster to read
+      - Preserves data types (int8 stays int8, not string)
+      - Compresses data automatically
+
+  save_scaler(scaler, name, dir)
+    Saves a fitted sklearn scaler (e.g. StandardScaler) to a .pkl file.
+    This is important: at inference time, you apply the SAME scaler
+    (same mean/std it learned from training data) rather than refitting.
+
+  df_report(df, label)
+    Logs a one-line summary at each pipeline step:
+    shape, NaN count, dtype breakdown. Helps you trace exactly what
+    changed between steps.
+
+
+================================================================================
+  LOADERS  (pipeline/loaders/)
+================================================================================
+Each loader reads ONE raw dataset and returns a raw DataFrame.
+No processing happens here — just reading and basic type casting.
+
+--------------------------------------------------------------------------------
+  loader_sensor_fusion.py
+--------------------------------------------------------------------------------
+Reads: datasets/1 [sensor fusion]/37544-extended_bridge_shm_dataset...csv
+
+  - Finds the timestamp column (scans column names for "time"/"timestamp")
+  - Parses it to Python datetime objects
+  - Sets it as the DataFrame index and sorts chronologically
+  - Casts float64 columns to float32 (saves ~50% memory, enough precision)
+
+Output: ~200 rows x 16 columns
+Columns include: Accel_1...Accel_16, Temperature, Humidity, Wind_Speed,
+  GPS_Lat, GPS_Long, Traffic_Count, Damage_Label, Maintenance_Flag
+
+
+--------------------------------------------------------------------------------
+  loader_behaviour.py
+--------------------------------------------------------------------------------
+Reads: datasets/2 [behaviour analysis]/Bridge vibration monitoring dataset/
+       test1.txt, test2.txt ... test8.txt  (8 files total)
+
+Each .txt file is a QuickDAQ export with:
+  - 9 header lines (metadata about the recording)
+  - Tab-separated data in scientific notation (e.g. 1.234E-03)
+  - Column 0: time in seconds, Columns 1-5: acceleration in g (gravity)
+
+This loader:
+  - Skips the 9 header lines
+  - Names columns: time_s, ch1_g, ch2_g, ch3_g, ch4_g, ch5_g
+  - Adds a "test_id" column (test1, test2, ...) so you can tell which
+    experiment each row came from after concatenation
+  - Merges all 8 files into one big DataFrame
+
+Output: ~6,652 rows x 7 columns (after windowing in feature engineering)
+
+
+--------------------------------------------------------------------------------
+  loader_anomaly.py
+--------------------------------------------------------------------------------
+Reads: datasets/3 [anomaly detection]/bridge_monitoring_data.csv
+
+  - Auto-detects which columns are sensors vs. metadata
+  - Renames all sensor columns to Sensor_001, Sensor_002 ... Sensor_216
+    (original names had no physical meaning)
+  - If a timestamp column exists, sets it as index
+  - If no timestamp, uses integer row index (sample_idx)
+
+Output: N rows x 216 sensor columns
+
+
+--------------------------------------------------------------------------------
+  loader_failure.py
+--------------------------------------------------------------------------------
+Reads: datasets/4 [failure prediction]/bridge_dataset.csv
+
+  - Parses timestamp, sorts chronologically
+  - Keeps Bridge_ID and Sensor_ID as strings (they are identifiers,
+    not numbers to do math on)
+  - Casts numeric sensor values to float32
+
+Output: 1,340 rows x 14 columns
+Columns include: Acceleration_X/Y/Z, Temperature, Humidity, Wind_Speed,
+  FFT_Peak_Frequency, FFT_Magnitude, Degradation_Score, Structural_Condition,
+  Damage_Class, Forecast_Score
+
+
+--------------------------------------------------------------------------------
+  loader_digital_twin.py
+--------------------------------------------------------------------------------
+Reads: datasets/5 [digital twin]/bridge_digital_twin_dataset.csv
+
+  - 54 columns, 43,200 rows (30 days at 1-minute intervals)
+  - Binary flag columns (Flood_Event_Flag, Maintenance_Alert, etc.)
+    are cast to int8 (uses 1 byte instead of 8 — saves ~85% memory)
+  - Categorical text columns (Bridge_Mood_Meter: Healthy/Stressed,
+    Vibration_Anomaly_Location: None/Cables/Deck/Piers) are stored
+    as "category" dtype (much more memory efficient than plain string)
+
+
+================================================================================
+  PROCESSORS  (pipeline/processors/)
+================================================================================
+The processors run in order: clean --> transform --> engineer_features
+They all accept any DataFrame + a dataset_name string and return a new DataFrame.
+
+--------------------------------------------------------------------------------
+  cleaner.py  (STEP 1 — Data Cleaning)
+--------------------------------------------------------------------------------
+Runs the same 4 cleaning steps on every dataset:
+
+STEP 1 — Deduplication
+  Drops any rows that are exact copies of another row.
+  Real sensors sometimes log the same reading twice if the clock skips.
+
+STEP 2 — Drop sparse columns
+  If more than 50% of a column's values are missing (NaN), the whole
+  column is dropped. A column that's mostly empty has no information
+  value for a model.
+
+STEP 3 — Impute (fill) missing values
+  For NUMERIC columns:
+    1. Linear interpolation: draws a straight line between the last
+       good value and the next good value, fills the gap
+    2. Forward-fill: if interpolation leaves NaN at the edges, copy
+       the last known value forward
+    3. Backward-fill: same but backwards for the very start of the data
+
+  For CATEGORICAL columns (text):
+    Fill with the most common value (mode).
+    Example: if Bridge_Mood_Meter is missing, fill with "Healthy"
+    if that's more common.
+
+STEP 4 — Outlier clipping (IQR method)
+  For each numeric column:
+    - Calculate Q1 (25th percentile) and Q3 (75th percentile)
+    - IQR = Q3 - Q1
+    - Lower bound = Q1 - 1.5 * IQR
+    - Upper bound = Q3 + 1.5 * IQR
+    - Any value outside these bounds is clipped (capped) to the bound
+    - This removes sensor malfunctions and noise spikes
+
+  Label columns and flag columns are SKIPPED — you don't want to
+  clip your target variable (Damage_Class, SHI, etc.)
+
+
+--------------------------------------------------------------------------------
+  transformer.py  (STEP 2 — Normalization & Encoding)
+--------------------------------------------------------------------------------
+Makes all data numerically consistent for ML models.
+
+STEP 1 — Cyclic time encoding
+  If the dataset has a datetime index, extracts hour, day-of-week, month
+  and encodes them as sin/cos pairs.
+  WHY: A model seeing hour=23 and hour=0 (midnight) treats them as far
+  apart (difference of 23) but they're actually only 1 hour apart.
+  sin(2*pi*23/24) and sin(2*pi*0/24) are close together — correct!
+
+STEP 2 — One-hot encoding of categorical columns
+  Converts text categories into binary columns.
+  Example:
+    Bridge_Mood_Meter = "Stressed"
+    becomes:
+    Bridge_Mood_Meter_Stressed = 1
+    Bridge_Mood_Meter_Healthy  = 0
+
+STEP 3 — Label encoding of target classes
+  Damage_Class (the failure prediction target) gets converted to integers:
+  "None", "Minor", "Moderate", "Severe" -> 0, 1, 2, 3
+
+STEP 4 — StandardScaler on physical sensor columns
+  Subtracts the mean, divides by standard deviation.
+  Result: each column has mean=0, std=1.
+  WHY: A model shouldn't think temperature (in range 10-40) is more
+  important than acceleration (in range 0.001-0.01) just because
+  the numbers are bigger.
+
+STEP 5 — MinMaxScaler on score/index columns
+  Squeezes values into the [0, 1] range.
+  Applied to: SHI, PoF, Degradation_Score, Forecast_Score
+  WHY: These already have meaningful 0-1 semantics (0=perfect, 1=failed)
+  so StandardScaler would destroy that meaning.
+
+STEP 6 — Save scalers
+  The fitted scaler objects are saved to processed/scalers/*.pkl
+  At inference time, load the same scaler and transform new data with
+  the SAME parameters (don't refit!).
+
+
+--------------------------------------------------------------------------------
+  feature_engineer.py  (STEP 3 — Feature Extraction)
+--------------------------------------------------------------------------------
+Creates new columns that capture patterns models can learn from.
+Different logic runs for each dataset:
+
+
+  DATASET 1 — Sensor Fusion (Rolling Statistics)
+  -----------------------------------------------
+  For each of the 16 accelerometer channels, at 3 window sizes
+  (10 rows, 30 rows, 60 rows = 10 min, 30 min, 1 hour):
+
+    Rolling Mean  — average over the window (steady-state baseline)
+    Rolling Std   — standard deviation over window (variability)
+    Rolling RMS   — Root Mean Square over window (energy level)
+                    RMS = sqrt(mean(x^2))
+
+  This gives the model both "what is the current average vibration"
+  and "how much is it varying" — important for detecting slow drift
+  vs. sudden impacts.
+
+
+  DATASET 2 — Behaviour / Vibration TXT (Sliding Window FFT)
+  -----------------------------------------------------------
+  A 1-second window (200 samples) slides across the raw waveform
+  with 50% overlap. For each window and each of the 5 channels:
+
+    RMS             — overall vibration energy in this second
+    Peak            — maximum absolute value (biggest spike)
+    Crest Factor    — Peak / RMS
+                      Low crest = smooth sustained vibration
+                      High crest = rare spiky impacts
+    Dominant Freq   — FFT finds which frequency has the most energy
+                      (e.g. 2 Hz might mean a passing heavy truck)
+    Spectral Energy — total power across all frequencies in the window
+    Kurtosis        — statistical "peakedness" of the distribution
+                      High kurtosis = rare extreme events (cracks, impacts)
+
+
+  DATASET 3 — Anomaly Detection (PCA + Reconstruction Error)
+  -----------------------------------------------------------
+  216 sensors is too many dimensions for most algorithms. PCA reduces
+  them to 30 "super-features" that capture 95%+ of the variance.
+
+  HOW PCA WORKS:
+    - Finds the directions (combinations of sensors) along which the
+      data varies the most
+    - Projects every row onto these 30 directions
+    - 216 numbers become 30 numbers (but almost all information kept)
+
+  RECONSTRUCTION ERROR:
+    - After PCA, project back to the 216-sensor space
+    - Compare the reconstructed values to the originals
+    - If the error is HIGH, this sample is unusual — the 30 most common
+      patterns can't explain it. That's a potential anomaly.
+
+  Both the 30 PCA components AND the reconstruction error are added
+  as new columns alongside the original 216 sensor columns.
+
+
+  DATASET 4 — Failure Prediction (Lag & Cross Features)
+  ------------------------------------------------------
+  Lag features: copies of past values shifted in time.
+    Degradation_Score_lag1  — degradation score 1 hour ago
+    Degradation_Score_lag6  — 6 hours ago
+    Degradation_Score_lag24 — 24 hours ago
+  WHY: Failure doesn't happen instantly. A model needs to see whether
+  the bridge was degrading gradually or rapidly.
+
+  Rolling 24h mean/std of Degradation_Score and FFT features.
+
+  Cross feature: Wind_Speed * Acceleration_Z
+    Wind-induced vibration proxy. Wind doesn't cause failures alone,
+    but wind COMBINED with vibration does.
+
+  Accel RMS: sqrt((X^2 + Y^2 + Z^2) / 3)
+    Combined 3D vibration magnitude in one number.
+
+
+  DATASET 5 — Digital Twin (SHI Forecasting Features)
+  ----------------------------------------------------
+  SHI lags: SHI_lag1, SHI_lag6, SHI_lag12, SHI_lag24
+    Health index values from 1, 6, 12, 24 hours ago.
+
+  Rolling stats on SHI, Vibration, Strain at 3 window sizes.
+
+  SHI_delta: SHI[t] - SHI[t-1]
+    Rate of change of health index.
+    Negative delta = bridge is degrading faster than usual.
+
+  Cumulative traffic: running sum of traffic volume.
+    Captures total load the bridge has experienced over its lifetime.
+
+  Load x Axle interaction: Vehicle_Load_tons * Axle_Counts_per_min
+    Heavier vehicles with more axles cause more damage. This captures
+    the combined effect better than either column alone.
+
+
+================================================================================
+  OUTPUTS  (processed/)
+================================================================================
+
+  processed/sensor_fusion.parquet     — shape: (200, 183)
+  processed/behaviour.parquet         — shape: (6652, 33)
+  processed/anomaly.parquet           — high-dim with PCA features
+  processed/failure_prediction.parquet — shape: (1340, 20+)
+  processed/digital_twin.parquet      — shape: (43200, 85)
+
+  processed/scalers/
+    sensor_fusion_standard_scaler.pkl
+    anomaly_standard_scaler.pkl
+    anomaly_pca_scaler.pkl            — reusable PCA object
+    failure_standard_scaler.pkl
+    failure_minmax_scaler.pkl
+    digital_twin_standard_scaler.pkl
+    digital_twin_minmax_scaler.pkl
+
+  logs/
+    run_pipeline.log                  — full run log
+    processor.cleaner.log             — cleaner step details
+    processor.transformer.log         — transformer step details
+    processor.feature_engineer.log    — feature engineering details
+    loader.*.log                      — one per loader
+    pipeline_report.json              — machine-readable summary
+
+
+================================================================================
+  HOW TO LOAD A PROCESSED DATASET IN YOUR ML CODE
+================================================================================
+
+  import pandas as pd
+
+  # Load instantly (no cleaning needed — already done)
+  df = pd.read_parquet("processed/digital_twin.parquet")
+
+  # Split into features and target
+  target = "Structural_Health_Index_SHI"
+  X = df.drop(columns=[target])
+  y = df[target]
+
+  # Ready for any sklearn / tensorflow / xgboost model
+
+
+================================================================================
+  DESIGN PRINCIPLES
+================================================================================
+
+  1. SEPARATION OF CONCERNS
+     Loading, cleaning, transforming, and feature engineering are all
+     separate files. Change one without touching the others.
+
+  2. NO DATA LEAKAGE
+     Scalers are fit ONLY on training data (fit=True). At inference,
+     the same scaler is loaded and applied (fit=False). Never fit on
+     test or future data.
+
+  3. REPRODUCIBILITY
+     All parameters (window sizes, IQR factor, PCA components) are in
+     config.py. Anyone can reproduce the exact same output.
+
+  4. MEMORY EFFICIENCY
+     float64 -> float32 (halves memory)
+     Binary columns -> int8 (saves 87.5% vs int64)
+     Categorical strings -> category dtype (saves 80-90% vs object)
+
+================================================================================

@@ -1,0 +1,1782 @@
+﻿
+--- sensor_fusion ---
+python : 2026-03-12 
+10:41:15 | INFO     | 
+loader.sensor_fusion | 
+Loading sensor fusion 
+dataset from: C:\Users\
+rpgra\OneDrive\Desktop\
+Augenblick\structure_in
+telligence\datasets\1 
+[sensor fusion]\37544-e
+xtended_bridge_shm_data
+set_timestamps_fixed - 
+Sheet1.csv
+At line:1 char:1
++ python -W ignore 
+test_pipeline.py 2>&1 
+| Out-File -FilePath 
+logs\test ...
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (2026-03-12 10   
+ :4...ed - Sheet1.c    
+sv:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.sensor_fusion | 
+Raw shape: (200, 35)
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.sensor_fusion | 
+Timestamp range: 
+1998-08-04 00:00:00 
+\u2192 1998-08-04 
+00:03:19
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+93: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_sensor_fusion.py"
+, line 34, in 
+load_sensor_fusion
+    
+log.info(f"Timestamp 
+range: 
+{df.index.min()} 
+\u2192 
+{df.index.max()}")
+Message: 'Timestamp 
+range: 1998-08-04 
+00:00:00 \u2192 
+1998-08-04 00:03:19'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.sensor_fusion | 
+[sensor_fusion [raw]] 
+shape=(200, 34) | 
+NaN=198 | 
+numeric_cols=31 | 
+dtypes: 
+{dtype('float32'): 26, 
+dtype('int64'): 5, 
+dtype('O'): 3}
+  Loaded:      (200, 34)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner | 
+[sensor_fusion] 
+Starting cleaning. 
+Input shape: (200, 34)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+Dedup: removed 0 rows
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+Dropping 1 columns 
+with >50% NaN: 
+['operator_notes']
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+After imputation: 0 
+NaN values remain
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+Outlier clipping: 74 
+values clipped across 
+31 columns
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner | 
+[sensor_fusion 
+[cleaned]] shape=(200, 
+33) | NaN=0 | 
+numeric_cols=31 | 
+dtypes: 
+{dtype('float64'): 21, 
+dtype('float32'): 5, 
+dtype('int64'): 5, 
+dtype('O'): 2}
+  Cleaned:     (200, 33)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| [sensor_fusion] 
+Starting 
+transformation. Input 
+shape: (200, 33)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+|   Added cyclic 
+hour/dow/month features
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\sensor_fu
+sion_standard_scaler.pk
+l
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 86, in transform
+    save_scaler(ss, f"{
+dataset_name}_standard"
+, scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\sensor_fusion_s
+tandard_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+|   StandardScaler 
+applied to 31 columns
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| [sensor_fusion 
+[transformed]] 
+shape=(200, 39) | 
+NaN=0 | 
+numeric_cols=37 | 
+dtypes: 
+{dtype('float32'): 31, 
+dtype('float64'): 6, 
+dtype('O'): 2}
+  Transformed: (200, 39)
+2026-03-12 10:41:15 | 
+INFO     | processor.fe
+ature_engineer | 
+[sensor_fusion] 
+Feature engineering. 
+Input shape: (200, 39)
+2026-03-12 10:41:15 | 
+INFO     | processor.fe
+ature_engineer |   
+Computing rolling 
+stats for 16 accel 
+columns, windows=[10, 
+30, 60]
+2026-03-12 10:41:15 | 
+INFO     | processor.fe
+ature_engineer |   
+Added 144 rolling 
+feature columns
+2026-03-12 10:41:15 | 
+INFO     | processor.fe
+ature_engineer | 
+[sensor_fusion 
+[engineered]] 
+shape=(200, 183) | 
+NaN=0 | 
+numeric_cols=181 | 
+dtypes: 
+{dtype('float32'): 
+175, dtype('float64'): 
+6, dtype('O'): 2}
+  Engineered:  (200, 183)
+  FINAL: shape=(200, 183), nan=0
+
+--- behaviour ---
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour | 
+Loading behaviour 
+vibration files from: C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\data
+sets\2 [behaviour 
+analysis]\Bridge 
+vibration monitoring 
+dataset
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test1.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 11137 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+11137 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test2.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 7105 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+7105 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test3.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 13921 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+13921 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test4.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 3361 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+3361 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test5.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 7809 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+7809 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test6.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 4129 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+4129 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test7.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 12289 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+12289 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |   
+Parsing test8.txt à
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour |     
+\u2192 6593 rows
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+56: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_behaviour.py", 
+line 58, in 
+load_behaviour
+    log.info(f"    
+\u2192 {df.shape[0]} 
+rows")
+Message: '    \u2192 
+6593 rows'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+loader.behaviour | 
+[behaviour [raw]] 
+shape=(66344, 7) | 
+NaN=0 | numeric_cols=6 
+| dtypes: 
+{dtype('float32'): 5, 
+dtype('float64'): 1, 
+dtype('O'): 1}
+  Loaded:      (66344, 7)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner | 
+[behaviour] Starting 
+cleaning. Input shape: 
+(66344, 7)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+Dedup: removed 0 rows
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+After imputation: 0 
+NaN values remain
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner |   
+Outlier clipping: 
+44984 values clipped 
+across 5 columns
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.cleaner | 
+[behaviour [cleaned]] 
+shape=(66344, 7) | 
+NaN=0 | numeric_cols=6 
+| dtypes: 
+{dtype('float32'): 5, 
+dtype('float64'): 1, 
+dtype('O'): 1}
+  Cleaned:     (66344, 7)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| [behaviour] Starting 
+transformation. Input 
+shape: (66344, 7)
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\behaviour
+_standard_scaler.pkl
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 86, in transform
+    save_scaler(ss, f"{
+dataset_name}_standard"
+, scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\behaviour_stand
+ard_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+|   StandardScaler 
+applied to 5 columns
+2026-03-12 10:41:15 | 
+INFO     | 
+processor.transformer 
+| [behaviour 
+[transformed]] 
+shape=(66344, 7) | 
+NaN=0 | numeric_cols=6 
+| dtypes: 
+{dtype('float32'): 5, 
+dtype('float64'): 1, 
+dtype('O'): 1}
+  Transformed: (66344, 7)
+2026-03-12 10:41:15 | 
+INFO     | processor.fe
+ature_engineer | 
+[behaviour] Feature 
+engineering. Input 
+shape: (66344, 7)
+2026-03-12 10:41:16 | 
+INFO     | processor.fe
+ature_engineer |   
+Behaviour: 652 
+windows, 33 feature 
+columns
+2026-03-12 10:41:16 | 
+INFO     | processor.fe
+ature_engineer | 
+[behaviour 
+[engineered]] 
+shape=(652, 33) | 
+NaN=0 | 
+numeric_cols=32 | 
+dtypes: 
+{dtype('float64'): 31, 
+dtype('O'): 1, 
+dtype('int64'): 1}
+  Engineered:  (652, 33)
+  FINAL: shape=(652, 33), nan=0
+
+--- anomaly ---
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.anomaly | 
+Loading anomaly 
+detection dataset 
+from: C:\Users\rpgra\On
+eDrive\Desktop\Augenbli
+ck\structure_intelligen
+ce\datasets\3 [anomaly 
+detection]\bridge_monit
+oring_data.csv
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.anomaly | Raw 
+shape: (4, 216)
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.anomaly | 
+Renamed 216 sensor 
+columns (Sensor_001 à 
+Sensor_216)
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.anomaly | No 
+timestamp column found 
+ù using integer sample 
+index
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.anomaly | 
+[anomaly [raw]] 
+shape=(4, 216) | NaN=0 
+| numeric_cols=216 | 
+dtypes: 
+{dtype('float32'): 216}
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner | 
+[anomaly] Starting 
+cleaning. Input shape: 
+(4, 216)
+  Loaded:      (4, 216)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+Dedup: removed 0 rows
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+After imputation: 0 
+NaN values remain
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+Outlier clipping: 0 
+values clipped across 
+216 columns
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner | 
+[anomaly [cleaned]] 
+shape=(4, 216) | NaN=0 
+| numeric_cols=216 | 
+dtypes: 
+{dtype('float32'): 216}
+  Cleaned:     (4, 216)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| [anomaly] Starting 
+transformation. Input 
+shape: (4, 216)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\anomaly_s
+tandard_scaler.pkl
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 86, in transform
+    save_scaler(ss, f"{
+dataset_name}_standard"
+, scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\anomaly_standar
+d_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+|   StandardScaler 
+applied to 216 columns
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| [anomaly 
+[transformed]] 
+shape=(4, 216) | NaN=0 
+| numeric_cols=216 | 
+dtypes: 
+{dtype('float32'): 216}
+  Transformed: (4, 216)
+2026-03-12 10:41:16 | 
+INFO     | processor.fe
+ature_engineer | 
+[anomaly] Feature 
+engineering. Input 
+shape: (4, 216)
+  ERROR: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 33, in <module>
+    df = 
+engineer_features(df, 
+name)
+         ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\feature_engineer.py",
+ line 232, in 
+engineer_features
+    df = 
+_engineer_anomaly(df, 
+log, fit=fit, 
+scaler_dir=scaler_dir)
+         ^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\feature_engineer.py",
+ line 117, in 
+_engineer_anomaly
+    pca_vals = 
+pca.fit_transform(X)
+               
+^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\
+anaconda3\Lib\site-pack
+ages\sklearn\utils\_set
+_output.py", line 313, 
+in wrapped
+    data_to_wrap = 
+f(self, X, *args, 
+**kwargs)
+                   ^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\rpgra\
+anaconda3\Lib\site-pack
+ages\sklearn\base.py", 
+line 1473, in wrapper
+    return 
+fit_method(estimator, 
+*args, **kwargs)
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^
+  File "C:\Users\rpgra\
+anaconda3\Lib\site-pack
+ages\sklearn\decomposit
+ion\_pca.py", line 
+474, in fit_transform
+    U, S, _, X, 
+x_is_centered, xp = 
+self._fit(X)
+                       
+             
+^^^^^^^^^^^^
+  File "C:\Users\rpgra\
+anaconda3\Lib\site-pack
+ages\sklearn\decomposit
+ion\_pca.py", line 
+547, in _fit
+    return 
+self._fit_full(X, 
+n_components, xp, 
+is_array_api_compliant)
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^
+  File "C:\Users\rpgra\
+anaconda3\Lib\site-pack
+ages\sklearn\decomposit
+ion\_pca.py", line 
+561, in _fit_full
+    raise ValueError(
+ValueError: 
+n_components=30 must 
+be between 0 and 
+min(n_samples, 
+n_features)=4 with 
+svd_solver='full'
+
+--- failure ---
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.failure | 
+Loading failure 
+prediction dataset 
+from: C:\Users\rpgra\On
+eDrive\Desktop\Augenbli
+ck\structure_intelligen
+ce\datasets\4 [failure 
+prediction]\bridge_data
+set.csv
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.failure | Raw 
+shape: (1340, 15)
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.failure | 
+Timestamp range: 
+2020-01-01 00:00:00 
+\u2192 2020-01-14 
+22:45:00
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+87: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_failure.py", 
+line 29, in 
+load_failure
+    
+log.info(f"Timestamp 
+range: 
+{df.index.min()} 
+\u2192 
+{df.index.max()}")
+Message: 'Timestamp 
+range: 2020-01-01 
+00:00:00 \u2192 
+2020-01-14 22:45:00'
+Arguments: ()
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.failure | 
+[failure [raw]] 
+shape=(1340, 14) | 
+NaN=0 | 
+numeric_cols=11 | 
+dtypes: 
+{dtype('float32'): 10, 
+dtype('O'): 3, 
+dtype('int64'): 1}
+  Loaded:      (1340, 14)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner | 
+[failure] Starting 
+cleaning. Input shape: 
+(1340, 14)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+Dedup: removed 0 rows
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+After imputation: 0 
+NaN values remain
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner |   
+Outlier clipping: 39 
+values clipped across 
+11 columns
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.cleaner | 
+[failure [cleaned]] 
+shape=(1340, 14) | 
+NaN=0 | 
+numeric_cols=11 | 
+dtypes: 
+{dtype('float32'): 6, 
+dtype('float64'): 4, 
+dtype('O'): 3, 
+dtype('int64'): 1}
+  Cleaned:     (1340, 14)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| [failure] Starting 
+transformation. Input 
+shape: (1340, 14)
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+|   Added cyclic 
+hour/dow/month features
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\failure_s
+tandard_scaler.pkl
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 86, in transform
+    save_scaler(ss, f"{
+dataset_name}_standard"
+, scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\failure_standar
+d_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+|   StandardScaler 
+applied to 11 columns
+2026-03-12 10:41:16 | 
+INFO     | 
+processor.transformer 
+| [failure 
+[transformed]] 
+shape=(1340, 20) | 
+NaN=0 | 
+numeric_cols=17 | 
+dtypes: 
+{dtype('float32'): 11, 
+dtype('float64'): 6, 
+dtype('O'): 3}
+  Transformed: (1340, 20)
+2026-03-12 10:41:16 | 
+INFO     | processor.fe
+ature_engineer | 
+[failure] Feature 
+engineering. Input 
+shape: (1340, 20)
+2026-03-12 10:41:16 | 
+WARNING  | processor.fe
+ature_engineer |   No 
+target columns found 
+for lag/rolling 
+features in failure 
+dataset
+2026-03-12 10:41:16 | 
+INFO     | processor.fe
+ature_engineer | 
+[failure [engineered]] 
+shape=(1340, 20) | 
+NaN=0 | 
+numeric_cols=17 | 
+dtypes: 
+{dtype('float32'): 11, 
+dtype('float64'): 6, 
+dtype('O'): 3}
+  Engineered:  (1340, 20)
+  FINAL: shape=(1340, 20), nan=0
+
+--- digital_twin ---
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.digital_twin | 
+Loading digital twin 
+dataset from: C:\Users\
+rpgra\OneDrive\Desktop\
+Augenblick\structure_in
+telligence\datasets\5 
+[digital twin]\bridge_d
+igital_twin_dataset.csv
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.digital_twin | 
+Raw shape: (43200, 54)
+2026-03-12 10:41:16 | 
+INFO     | 
+loader.digital_twin | 
+Timestamp range: 
+2023-01-01 00:00:00 
+\u2192 2023-01-30 
+23:59:00
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+92: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 27, in <module>
+    df = loader()
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\loaders\l
+oader_digital_twin.py",
+ line 40, in 
+load_digital_twin
+    
+log.info(f"Timestamp 
+range: 
+{df.index.min()} 
+\u2192 
+{df.index.max()}")
+Message: 'Timestamp 
+range: 2023-01-01 
+00:00:00 \u2192 
+2023-01-30 23:59:00'
+Arguments: ()
+2026-03-12 10:41:17 | 
+INFO     | 
+loader.digital_twin | 
+[digital_twin [raw]] 
+shape=(43200, 53) | 
+NaN=113315 | 
+numeric_cols=51 | 
+dtypes: 
+{dtype('float32'): 45, 
+dtype('int8'): 6, Categ
+oricalDtype(categories=
+['Critical', 
+'Healthy', 
+'Stressed'], 
+ordered=False, categori
+es_dtype=object): 1, Ca
+tegoricalDtype(categori
+es=['Cables', 'Deck', 
+'Piers'], 
+ordered=False, categori
+es_dtype=object): 1}
+  Loaded:      (43200, 53)
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner | 
+[digital_twin] 
+Starting cleaning. 
+Input shape: (43200, 
+53)
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner |   
+Dedup: removed 0 rows
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner |   
+Dropping 1 columns 
+with >50% NaN: ['Vibrat
+ion_Anomaly_Location']
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner |   
+After imputation: 0 
+NaN values remain
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner |   
+Outlier clipping: 
+23895 values clipped 
+across 45 columns
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.cleaner | 
+[digital_twin 
+[cleaned]] 
+shape=(43200, 52) | 
+NaN=0 | 
+numeric_cols=51 | 
+dtypes: 
+{dtype('float64'): 26, 
+dtype('float32'): 19, 
+dtype('int8'): 6, Categ
+oricalDtype(categories=
+['Critical', 
+'Healthy', 
+'Stressed'], 
+ordered=False, categori
+es_dtype=object): 1}
+  Cleaned:     (43200, 52)
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+| [digital_twin] 
+Starting 
+transformation. Input 
+shape: (43200, 52)
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+|   Added cyclic 
+hour/dow/month features
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+|   One-hot encoded 
+'Bridge_Mood_Meter' 
+\u2192 ['Bridge_Mood_Me
+ter_Critical', 'Bridge_
+Mood_Meter_Healthy', 'B
+ridge_Mood_Meter_Stress
+ed']
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+95: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 58, in transform
+    log.info(f"  
+One-hot encoded 
+'{col}' \u2192 {list(du
+mmies.columns)}")
+Message: "  One-hot 
+encoded 
+'Bridge_Mood_Meter' 
+\u2192 ['Bridge_Mood_Me
+ter_Critical', 'Bridge_
+Mood_Meter_Healthy', 'B
+ridge_Mood_Meter_Stress
+ed']"
+Arguments: ()
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\digital_t
+win_standard_scaler.pkl
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 86, in transform
+    save_scaler(ss, f"{
+dataset_name}_standard"
+, scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\digital_twin_st
+andard_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+|   StandardScaler 
+applied to 37 columns
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+| Saved scaler \u2192 C
+:\Users\rpgra\OneDrive\
+Desktop\Augenblick\stru
+cture_intelligence\proc
+essed\scalers\digital_t
+win_minmax_scaler.pkl
+--- Logging error ---
+Traceback (most recent 
+call last):
+  File "C:\Users\rpgra\
+anaconda3\Lib\logging\_
+_init__.py", line 
+1163, in emit
+    stream.write(msg + 
+self.terminator)
+  File "C:\Users\rpgra\
+anaconda3\Lib\encodings
+\cp1252.py", line 19, 
+in encode
+    return codecs.charm
+ap_encode(input,self.er
+rors,encoding_table)[0]
+           ^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 
+'charmap' codec can't 
+encode character 
+'\u2192' in position 
+70: character maps to 
+<undefined>
+Call stack:
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\test_pipeline.py",
+ line 31, in <module>
+    df = transform(df, 
+name)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\processor
+s\transformer.py", 
+line 97, in transform
+    save_scaler(mm, f"{
+dataset_name}_minmax", 
+scaler_dir, log)
+  File "C:\Users\rpgra\
+OneDrive\Desktop\Augenb
+lick\structure_intellig
+ence\pipeline\utils.py"
+, line 76, in 
+save_scaler
+    
+logger.info(f"Saved 
+scaler \u2192 {out}")
+Message: 'Saved scaler 
+\u2192 C:\\Users\\rpgra
+\\OneDrive\\Desktop\\Au
+genblick\\structure_int
+elligence\\processed\\s
+calers\\digital_twin_mi
+nmax_scaler.pkl'
+Arguments: ()
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+|   MinMaxScaler 
+applied to 8 columns
+2026-03-12 10:41:17 | 
+INFO     | 
+processor.transformer 
+| [digital_twin 
+[transformed]] 
+shape=(43200, 60) | 
+NaN=0 | 
+numeric_cols=60 | 
+dtypes: 
+{dtype('float32'): 45, 
+dtype('int8'): 9, 
+dtype('float64'): 6}
+  Transformed: (43200, 60)
+2026-03-12 10:41:17 | 
+INFO     | processor.fe
+ature_engineer | 
+[digital_twin] Feature 
+engineering. Input 
+shape: (43200, 60)
+2026-03-12 10:41:17 | 
+INFO     | processor.fe
+ature_engineer |   
+Added SHI lag 
+features: [1, 6, 12, 
+24]
+2026-03-12 10:41:17 | 
+INFO     | processor.fe
+ature_engineer |   
+Digital twin: added 22 
+lag/rolling + 3 
+derived feature columns
+2026-03-12 10:41:17 | 
+INFO     | processor.fe
+ature_engineer | 
+[digital_twin 
+[engineered]] 
+shape=(43200, 85) | 
+NaN=0 | 
+numeric_cols=85 | 
+dtypes: 
+{dtype('float32'): 70, 
+dtype('int8'): 9, 
+dtype('float64'): 6}
+  Engineered:  (43200, 85)
+  FINAL: shape=(43200, 85), nan=0
+
+=== SOME FAILED ===
