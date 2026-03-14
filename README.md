@@ -4,18 +4,38 @@
 Structural Monitoring Platform is a React based bridge monitoring tool that uses multi-sensor data to monitor the structural health of bridges in real time. It is an ideal solution to keep track of the bridge's safety instead of manually inspecting and monitoring them which is painstakingly inefficient and can lead to slip-ups that can prove catastrophic in the future.
 
 ## Demo
-![Home Page](structure_intelligence/demoss/home_page.png) 
 
+### 🏠 Home Page
+![Home Page](structure_intelligence/demoss/home_page.png)
+
+---
+
+### 🔗 Data Fusion
 ![Data Fusion Tab](structure_intelligence/demoss/data_fusion.png)
 
+---
+
+### 📊 Behavior Analysis
 ![Behavior Analysis Tab](structure_intelligence/demoss/behavior_analysis.png)
 
+---
+
+### ⚠️ Anomaly Detection
 ![Anomaly Detection Tab](structure_intelligence/demoss/anomaly_detection.png)
 
+---
+
+### 📉 Risk Prediction
 ![Risk Prediction Tab](structure_intelligence/demoss/risk_prediction.png)
 
+---
+
+### 🏗 Digital Twin
 ![Digital Twin Tab](structure_intelligence/demoss/digital_twin.png)
 
+---
+
+### 🤖 AI Assistant
 ![AI Assistant Tab](structure_intelligence/demoss/ai_assistant.png)
 
 ## Features
