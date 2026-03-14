@@ -1,0 +1,47 @@
+{
+  "summary": [
+    {
+      "dataset": "sensor_fusion",
+      "status": "\u2705 SUCCESS",
+      "shape": [
+        200,
+        183
+      ],
+      "elapsed_s": 0.21
+    },
+    {
+      "dataset": "behaviour",
+      "status": "\u2705 SUCCESS",
+      "shape": [
+        652,
+        33
+      ],
+      "elapsed_s": 0.82
+    },
+    {
+      "dataset": "anomaly",
+      "status": "\u274c FAILED: n_components=30 must be between 0 and min(n_samples, n_features)=4 with svd_solver='full'",
+      "shape": null,
+      "elapsed_s": 0.35
+    },
+    {
+      "dataset": "failure",
+      "status": "\u2705 SUCCESS",
+      "shape": [
+        1340,
+        20
+      ],
+      "elapsed_s": 0.05
+    },
+    {
+      "dataset": "digital_twin",
+      "status": "\u2705 SUCCESS",
+      "shape": [
+        43200,
+        85
+      ],
+      "elapsed_s": 1.32
+    }
+  ],
+  "total_elapsed_s": 2.76
+}

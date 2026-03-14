@@ -1,0 +1,50 @@
+2026-03-12 10:35:57 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:35:57 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:35:57 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:35:57 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:35:57 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:36:33 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:36:33 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:36:33 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:36:33 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:36:33 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:38:27 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:38:27 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:38:27 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:38:27 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:38:27 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:39:42 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:39:42 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:39:42 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:39:42 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:39:42 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:40:04 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:40:04 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:40:04 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:40:04 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:40:04 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:16 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:41:16 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:41:16 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:41:16 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:41:16 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:54 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:41:54 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:41:54 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:41:54 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:41:54 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:42:52 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:42:52 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:42:52 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:42:52 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:42:52 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:43:39 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 10:43:39 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 10:43:39 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 10:43:39 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 10:43:39 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 16:10:23 | INFO     | loader.anomaly | Loading anomaly detection dataset from: C:\Users\rpgra\Downloads\structural_intelligence (2)\structural_intelligence\structure_intelligence\datasets\3 [anomaly detection]\bridge_monitoring_data.csv
+2026-03-12 16:10:23 | INFO     | loader.anomaly | Raw shape: (4, 216)
+2026-03-12 16:10:23 | INFO     | loader.anomaly | Renamed 216 sensor columns (Sensor_001 … Sensor_216)
+2026-03-12 16:10:23 | INFO     | loader.anomaly | No timestamp column found — using integer sample index
+2026-03-12 16:10:23 | INFO     | loader.anomaly | [anomaly [raw]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}

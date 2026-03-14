@@ -1,0 +1,154 @@
+2026-03-12 10:35:55 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:35:55 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:35:55 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:35:55 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:35:56 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:35:57 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:35:57 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:35:57 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:35:57 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:35:57 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:35:57 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:35:58 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:35:58 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:35:59 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:35:59 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:36:32 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:36:32 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:36:32 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:36:32 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:36:32 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:36:33 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:36:33 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:36:33 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:36:33 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:36:33 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:36:33 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:36:34 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:36:34 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:36:34 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:36:34 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:38:26 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:38:26 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:38:26 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:38:26 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:38:27 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:38:27 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:38:27 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:38:28 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:38:28 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:38:29 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:39:39 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:39:39 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:39:39 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:39:39 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:39:40 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:39:42 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:39:42 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:39:43 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:39:43 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:39:43 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:39:43 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:39:44 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:39:44 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:39:44 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:39:44 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:40:03 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:40:03 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:40:03 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:40:03 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:40:03 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:40:04 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:40:04 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:40:04 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:40:04 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:40:04 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:40:04 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:40:05 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:40:05 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:40:05 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:40:05 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:40:32 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:40:32 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:40:32 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:40:33 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:41:15 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:41:15 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:41:15 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:41:16 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:41:16 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:41:16 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:41:16 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:41:16 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:41:16 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:41:17 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:41:17 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:41:17 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:41:17 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:41:54 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:41:54 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:41:55 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:41:55 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:42:17 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:42:17 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:42:35 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:42:35 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:42:35 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:42:35 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:42:51 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:42:51 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:42:51 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:42:52 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:42:52 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:42:52 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:42:52 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:42:52 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:42:52 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:42:54 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:42:54 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:42:54 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:42:54 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:43:38 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 10:43:38 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 10:43:38 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 10:43:39 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:43:39 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 10:43:39 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 10:43:39 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:43:40 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 10:43:40 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 10:43:40 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 10:43:40 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:43:41 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 10:43:41 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 10:43:41 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 10:43:41 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 16:10:20 | INFO     | processor.feature_engineer | [sensor_fusion] Feature engineering. Input shape: (200, 39)
+2026-03-12 16:10:20 | INFO     | processor.feature_engineer |   Computing rolling stats for 16 accel columns, windows=[10, 30, 60]
+2026-03-12 16:10:20 | INFO     | processor.feature_engineer |   Added 144 rolling feature columns
+2026-03-12 16:10:21 | INFO     | processor.feature_engineer | [sensor_fusion [engineered]] shape=(200, 183) | NaN=0 | numeric_cols=181 | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 16:10:21 | INFO     | processor.feature_engineer | [behaviour] Feature engineering. Input shape: (66344, 7)
+2026-03-12 16:10:23 | INFO     | processor.feature_engineer |   Behaviour: 652 windows, 33 feature columns
+2026-03-12 16:10:23 | INFO     | processor.feature_engineer | [behaviour [engineered]] shape=(652, 33) | NaN=0 | numeric_cols=32 | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 16:10:24 | INFO     | processor.feature_engineer | [anomaly] Feature engineering. Input shape: (4, 216)
+2026-03-12 16:10:24 | INFO     | processor.feature_engineer | [failure] Feature engineering. Input shape: (1340, 20)
+2026-03-12 16:10:24 | WARNING  | processor.feature_engineer |   No target columns found for lag/rolling features in failure dataset
+2026-03-12 16:10:24 | INFO     | processor.feature_engineer | [failure [engineered]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 16:10:26 | INFO     | processor.feature_engineer | [digital_twin] Feature engineering. Input shape: (43200, 60)
+2026-03-12 16:10:26 | INFO     | processor.feature_engineer |   Added SHI lag features: [1, 6, 12, 24]
+2026-03-12 16:10:26 | INFO     | processor.feature_engineer |   Digital twin: added 22 lag/rolling + 3 derived feature columns
+2026-03-12 16:10:26 | INFO     | processor.feature_engineer | [digital_twin [engineered]] shape=(43200, 85) | NaN=0 | numeric_cols=85 | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}

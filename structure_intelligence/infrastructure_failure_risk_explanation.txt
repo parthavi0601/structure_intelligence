@@ -1,0 +1,45 @@
+Infrastructure Failure Risk Prediction: Step-by-Step Explanation
+==============================================================
+This document outlines the methodology and implementation details for the Infrastructure Failure Risk Prediction feature in the AI-Powered Structural Intelligence System.
+
+1. Objective
+------------
+The goal of the Failure Risk Prediction module is to estimate the probability of structural failure or degradation. It builds upon earlier steps (Structural Behavior Analysis and Anomaly Detection) to predict risk levels and assist engineers in prioritizing maintenance actions.
+
+2. Files Involved
+-----------------
+*   Implementation code: run_risk_prediction.py
+*   Input data: Processed parquet datasets containing behavior and anomaly scores (e.g., processed/*_behavior.parquet).
+*   Output data: The script updates the identical parquet files in the processed/ directory by appending a new Predicted_Risk_Score feature.
+
+3. AI Methodology: Machine Learning & Feature Synthesis
+-------------------------------------------------------
+The approach utilizes a Random Forest Regressor to predict a forward-looking risk score based on multi-sensor data fusion.
+
+*   Feature Selection: The model identifies predictive columns related to structural strain, vibration, temperature, and acceleration. Crucially, it incorporates the outputs from previous AI modules: Behavioral_Shift_Index, Structural_Dynamics_Score, and Autoencoder_Anomaly_Score.
+*   Data Normalization: Extracted features are numerically scaled using an established StandardScaler to ensure no single large-valued metric outweighs the others.
+
+4. Step-by-Step Implementation Pipeline
+---------------------------------------
+
+Step 1: Data Ingestion
+The pipeline scans the processed/ directory for previously analyzed datasets (*_behavior.parquet). These files inherently contain the necessary structural dynamics and anomaly detection metadata.
+
+Step 2: Target Evaluation & Model Strategy
+The script dynamically accommodates the availability of training labels (e.g., forecast_score_next_30d):
+*   Supervised Learning Path: If ground truth data is present, the script trains a RandomForestRegressor (using an ensemble of 50 decision trees up to a max depth of 10) to learn complex interactions between structural responses and failure events.
+*   Heuristic Scoring Path (Simulation): If specific target labels are absent, the system seamlessly simulates risk by calculating a synthetic response. It dynamically builds the Predicted_Risk_Score from a weighted aggregation:
+    - 50% emphasis on Autoencoder Anomaly Score
+    - 30% emphasis on Behavioral Shift Index
+    - 20% emphasis on Structural Dynamics Score
+
+Step 3: Risk Scoring & Normalization
+The generated Predicted_Risk_Score is finalized and bounded between 0.0 (No Risk) and 1.0 (Critical Failure Risk) to maintain consistency and ease of interpretation for engineers.
+
+Step 4: Output Persistence
+The enriched dataset, now containing the authoritative Predicted_Risk_Score, is securely saved back to its corresponding parquet file in the processed/ folder.
+
+5. Interpreting the Dashboard Output
+------------------------------------
+*   Predicted Risk Score (0 to 1): The final output provides a unified, continuous indicator of infrastructure health.
+*   Maintenance Prioritization: Engineers can utilize this singular metric to rank infrastructure assets, addressing critical risk assets immediately. This effectively shifts resource allocation from routine manual inspections to predictive, data-driven maintenance insights.

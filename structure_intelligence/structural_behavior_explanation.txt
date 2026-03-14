@@ -1,0 +1,35 @@
+Structural Behavior Analysis Implementation - Explanation
+=======================================================
+
+Overview
+---------
+The Structural Behavior Analysis feature has been implemented to quantify and track changes in structural dynamics over time, bridging the gap between raw / feature-engineered sensor data and the downstream Structural Anomaly Detection module.
+
+Files Involved:
+- Implementation code: `run_behavior_analysis.py`
+- Input data: Existing `*.parquet` files in the `processed/` folder (multi-sensor data, operational variables)
+- Output data: Augmented parquet files named `*_behavior.parquet` saved in the `processed/` folder.
+
+How it works
+------------
+The script systematically loads each processed parquet dataset and identifies features intrinsic to structural response (such as vibration RMS, dominant frequencies, accelerations, spectral energies, strains, and deflections). By monitoring how these combinations behave, we can identify "underlying operational states" and measure the structure's drift from normalcy.
+
+Two core machine-learning models are utilized on the structural response features to capture Structural Behavior:
+
+1. Operational Modal Behavior Mapping (Gaussian Mixture Model)
+We fit a 3-component Gaussian Mixture Model (GMM) to the structural features. This groups the structural behavior into 3 probabilistic states (e.g., State 0: Normal Baseline, State 1: Intermediate/Active Load, State 2: Altered Dynamics).
+Output Feature: `Behavioral_State_Cluster` (Integer 0, 1, or 2)
+
+2. Behavioral Shift Indexing (GMM Log-Likelihood)
+We calculate the negative log-likelihood of each sample residing in the modeled Gaussian space. A higher value indicates that the structural behavior is drifting from expected modal norms—a key indicator of degradation.
+Output Feature: `Behavioral_Shift_Index` (Normalized 0.0 to 1.0)
+
+3. Structural Dynamics Isolation (Isolation Forest)
+We utilize an Isolation Forest to carve out independent isolation boundaries in the multi-dimensional feature space. When structural stiffness decreases or damping increases (e.g., due to localized yielding or cracking), the sensor response patterns shift into isolated parameter combinations. We capture this shift as an anomaly score.
+Output Feature: `Structural_Dynamics_Score` (Normalized 0.0 to 1.0)
+
+
+Integration with the Next Feature (Structural Anomaly Detection)
+----------------------------------------------------------------
+The prompt dictates that the output from this feature must feed into the next feature (Anomaly Detection). 
+By creating `processed/*_behavior.parquet` files with these 3 new powerful meta-features (`Behavioral_State_Cluster`, `Behavioral_Shift_Index`, and `Structural_Dynamics_Score`), the downstream Anomaly Detection module does not need to start from scratch. It can simply load the `_behavior.parquet` dataset and look for sudden discontinuities in the `Behavioral_Shift_Index` or transitions into anomalous `Behavioral_State_Cluster` modes, effectively detecting the anomalies faster and with much higher confidence.

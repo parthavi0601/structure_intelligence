@@ -1,0 +1,20 @@
+2026-03-12 10:44:31 | INFO     | validate | ============================================================
+2026-03-12 10:44:31 | INFO     | validate |   PIPELINE VALIDATION REPORT
+2026-03-12 10:44:31 | INFO     | validate | ============================================================
+2026-03-12 10:44:31 | INFO     | validate | 
+[SENSOR_FUSION]
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (200, 183) | dtypes: {dtype('float32'): 175, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:44:32 | INFO     | validate | 
+[BEHAVIOUR]
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (652, 33) | dtypes: {dtype('float64'): 31, dtype('O'): 1, dtype('int64'): 1}
+2026-03-12 10:44:32 | INFO     | validate | 
+[ANOMALY]
+2026-03-12 10:44:32 | INFO     | validate | 
+[FAILURE]
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (1340, 20) | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:44:32 | INFO     | validate | 
+[DIGITAL_TWIN]
+2026-03-12 10:44:32 | INFO     | validate |   Shape: (43200, 85) | dtypes: {dtype('float32'): 70, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:44:32 | INFO     | validate | 
+============================================================
+2026-03-12 10:44:32 | INFO     | validate | ============================================================

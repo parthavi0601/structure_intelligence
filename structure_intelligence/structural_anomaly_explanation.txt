@@ -1,0 +1,52 @@
+Structural Anomaly Detection: Step-by-Step Explanation
+======================================================
+This document explains the methodology and interpretation behind the Structural Anomaly Detection feature implemented in the AI-Powered Structural Intelligence System.
+
+1. Objective
+------------
+The goal of Structural Anomaly Detection is to identify unusual structural responses—such as abnormal vibration patterns, stress concentration events, sudden displacement changes, or temperature-related structural anomalies—that may indicate early signs of degradation or damage.
+
+2. AI Methodology: Autoencoder Neural Networks
+----------------------------------------------
+We utilize an Autoencoder, a specific architecture of Artificial Neural Networks, built using scikit-learn's `MLPRegressor`.
+
+*   How it works:
+    An Autoencoder is trained to compress the input data into a smaller representation (a "bottleneck") and then reconstruct the original input from this compressed form.
+*   Learning "Normal":
+    By feeding the Autoencoder substantial amounts of sensor data, it learns the typical patterns of a healthy structure. It becomes very good at reconstructing "normal" structural behavior.
+*   Detecting "Abnormal":
+    When the structure experiences an anomaly (e.g., a stress fracture causing irregular vibrations), the sensor readings change. When these anomalous readings are fed into the Autoencoder algorithms, it struggles to reconstruct the signal accurately because it hasn't seen this pattern during its "normal" training.
+
+3. Step-by-Step Implementation Pipeline
+-------------------------------------
+
+Step 1: Metric Selection
+The system automatically scans the sensor data (`processed/*_behavior.parquet`) and isolates features critical to structural integrity. This includes columns related to:
+*   Vibration (acceleration, RMS, peak frequencies)
+*   Strain & Stress gauges
+*   Displacement & Deflection
+*   Temperature (as environmental factors influence expansion/contraction)
+
+Step 2: Data Normalization
+The selected structural metrics vary in units and magnitude (e.g., Hz vs. micro-strain). We use a `StandardScaler` to normalize all features strictly to a mean of 0 and a standard deviation of 1. This ensures the neural network treats all physical phenomena equally without bias toward larger numerical values.
+
+Step 3: Model Training
+The normalized data is passed through our Multi-Layer Perceptron Autoencoder:
+*   Input Layer -> Hidden Layer (16 neurons) -> Bottleneck (8 neurons) -> Hidden Layer (16 neurons) -> Output Layer
+*   The model iterativly adjusts itself to minimize the difference between the Input and Output.
+
+Step 4: Anomaly Scoring via Reconstruction Error
+For every data point (timestamp), we calculate the Mean Squared Error (MSE) between the actual sensor readings (Input) and the Autoencoder's reconstruction (Output).
+*   Low Error = Normal operation.
+*   High Error = Structural Anomaly.
+This error is normalized onto a 0 to 1 scale, resulting in the `Autoencoder_Anomaly_Score`.
+
+Step 5: Alert Generation
+The system calculates the 95th percentile of all anomaly scores across the dataset. Any operational envelope exceeding this threshold is flagged with an `Anomaly_Alert_Flag` = 1, highlighting the exact moments the structure experienced unexpected dynamic stress.
+
+4. Interpreting the Dashboard Output
+------------------------------------
+*   Autoencoder Anomaly Score (0 to 1): A continuous metric available in the interactive dashboard. An engineer should look for sudden spikes in this score. Steady, low values indicate a healthy structure. A rising baseline might indicate gradual, systemic degradation.
+*   Anomaly Alert Flag: Binary (0 or 1). Designed for immediate notification. If a bridge triggers multiple alerts in succession, it warrants prioritized physical inspection or in-depth data review of that specific timeframe.
+
+By combining the Anomaly Detection with the Operational Behavioral State Clustering, engineers are equipped with a highly robust early warning system.

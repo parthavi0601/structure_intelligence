@@ -1,0 +1,193 @@
+2026-03-12 10:35:55 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:35:55 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:35:55 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:35:55 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:35:56 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:35:56 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:35:56 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:35:57 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:35:57 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:35:57 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:35:57 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:35:57 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:35:57 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:35:57 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:35:58 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:35:58 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:35:58 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:35:58 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:35:58 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:36:32 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:36:32 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:36:32 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:36:32 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:36:32 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:36:32 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:36:32 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:36:33 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:36:33 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:36:33 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:36:33 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:36:33 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:36:33 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:36:33 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:36:34 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:36:34 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:36:34 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:36:34 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:36:34 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:38:26 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:38:26 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:38:26 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:38:26 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:38:27 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:38:27 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:38:27 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:38:28 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:38:28 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:38:28 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:38:28 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:38:28 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:38:28 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:38:28 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:38:28 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:38:28 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:38:28 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:38:28 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:38:28 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:39:39 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:39:39 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:39:39 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:39:39 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:39:40 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:39:40 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:39:40 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:39:43 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:39:43 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:39:43 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:39:43 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:39:43 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:39:43 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:39:43 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:39:44 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:39:44 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:39:44 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:39:44 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:39:44 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:40:03 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:40:03 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:40:03 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:40:03 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:40:03 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:40:03 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:40:03 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:40:04 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:40:04 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:40:04 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:40:04 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:40:04 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:40:04 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:40:04 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:40:05 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:40:05 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:40:05 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:40:05 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:40:05 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:40:32 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:40:32 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:40:32 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:40:32 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:41:15 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:41:15 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:41:15 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:41:15 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:41:15 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:41:15 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:41:16 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:41:16 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:41:16 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:16 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:41:16 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:41:16 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:41:16 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:41:17 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:41:17 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:41:17 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:41:17 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:41:17 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:41:54 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:41:54 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:41:54 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:41:54 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:41:54 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:41:54 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:42:17 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:42:17 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:17 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:42:17 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:17 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:42:17 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:17 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:42:17 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:42:35 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:42:35 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:35 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:42:35 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:42:51 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:51 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:42:51 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:42:51 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:42:51 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:42:51 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:42:52 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:42:52 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:42:52 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:42:52 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:42:52 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:52 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:42:52 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:42:54 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:42:54 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:42:54 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:42:54 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:42:54 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 10:43:38 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 10:43:38 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:43:38 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 10:43:38 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 10:43:39 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 10:43:39 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 10:43:39 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 10:43:40 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 10:43:40 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 10:43:40 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 10:43:40 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 10:43:40 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:43:40 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 10:43:40 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 10:43:41 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 10:43:41 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 10:43:41 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 10:43:41 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 10:43:41 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}
+2026-03-12 16:10:20 | INFO     | processor.transformer | [sensor_fusion] Starting transformation. Input shape: (200, 33)
+2026-03-12 16:10:20 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 16:10:20 | INFO     | processor.transformer |   StandardScaler applied to 31 columns
+2026-03-12 16:10:20 | INFO     | processor.transformer | [sensor_fusion [transformed]] shape=(200, 39) | NaN=0 | numeric_cols=37 | dtypes: {dtype('float32'): 31, dtype('float64'): 6, dtype('O'): 2}
+2026-03-12 16:10:21 | INFO     | processor.transformer | [behaviour] Starting transformation. Input shape: (66344, 7)
+2026-03-12 16:10:21 | INFO     | processor.transformer |   StandardScaler applied to 5 columns
+2026-03-12 16:10:21 | INFO     | processor.transformer | [behaviour [transformed]] shape=(66344, 7) | NaN=0 | numeric_cols=6 | dtypes: {dtype('float32'): 5, dtype('float64'): 1, dtype('O'): 1}
+2026-03-12 16:10:24 | INFO     | processor.transformer | [anomaly] Starting transformation. Input shape: (4, 216)
+2026-03-12 16:10:24 | INFO     | processor.transformer |   StandardScaler applied to 216 columns
+2026-03-12 16:10:24 | INFO     | processor.transformer | [anomaly [transformed]] shape=(4, 216) | NaN=0 | numeric_cols=216 | dtypes: {dtype('float32'): 216}
+2026-03-12 16:10:24 | INFO     | processor.transformer | [failure] Starting transformation. Input shape: (1340, 14)
+2026-03-12 16:10:24 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 16:10:24 | INFO     | processor.transformer |   StandardScaler applied to 11 columns
+2026-03-12 16:10:24 | INFO     | processor.transformer | [failure [transformed]] shape=(1340, 20) | NaN=0 | numeric_cols=17 | dtypes: {dtype('float32'): 11, dtype('float64'): 6, dtype('O'): 3}
+2026-03-12 16:10:25 | INFO     | processor.transformer | [digital_twin] Starting transformation. Input shape: (43200, 52)
+2026-03-12 16:10:25 | INFO     | processor.transformer |   Added cyclic hour/dow/month features
+2026-03-12 16:10:25 | INFO     | processor.transformer |   StandardScaler applied to 37 columns
+2026-03-12 16:10:26 | INFO     | processor.transformer |   MinMaxScaler applied to 8 columns
+2026-03-12 16:10:26 | INFO     | processor.transformer | [digital_twin [transformed]] shape=(43200, 60) | NaN=0 | numeric_cols=60 | dtypes: {dtype('float32'): 45, dtype('int8'): 9, dtype('float64'): 6}

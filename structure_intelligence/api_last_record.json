@@ -1,0 +1,12 @@
+{
+    "time_step": 430,
+    "Behavioral_Shift_Index": 0.21936030384398306,
+    "Structural_Dynamics_Score": 0.2646601445558591,
+    "Behavioral_State_Cluster": 2,
+    "degradation_score": -1.7267969846725464,
+    "forecast_score_next_30d": -1.4721602201461792,
+    "Predicted_Risk_Score": 0.0,
+    "structural_condition": -1.2700902223587036,
+    "Autoencoder_Anomaly_Score": 0.09782695770263672,
+    "Anomaly_Alert_Flag": 0
+}

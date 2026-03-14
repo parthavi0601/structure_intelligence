@@ -1,0 +1,36 @@
+2026-03-12 10:35:54 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:35:55 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:35:55 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:36:32 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:36:32 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:36:32 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:38:26 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:38:26 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:38:26 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:39:39 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:39:39 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:39:39 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:40:03 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:40:03 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:40:03 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:40:32 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:40:32 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:40:32 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:41:15 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:41:15 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:41:15 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:42:17 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:42:17 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:42:17 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:42:35 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:42:35 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:42:35 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:42:51 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:42:51 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:42:51 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 10:43:38 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\OneDrive\Desktop\Augenblick\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 10:43:38 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 10:43:38 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
+2026-03-12 16:10:20 | INFO     | loader.sensor_fusion | Loading sensor fusion dataset from: C:\Users\rpgra\Downloads\structural_intelligence (2)\structural_intelligence\structure_intelligence\datasets\1 [sensor fusion]\37544-extended_bridge_shm_dataset_timestamps_fixed - Sheet1.csv
+2026-03-12 16:10:20 | INFO     | loader.sensor_fusion | Raw shape: (200, 35)
+2026-03-12 16:10:20 | INFO     | loader.sensor_fusion | [sensor_fusion [raw]] shape=(200, 34) | NaN=198 | numeric_cols=31 | dtypes: {dtype('float32'): 26, dtype('int64'): 5, dtype('O'): 3}
