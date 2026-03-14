@@ -57,6 +57,10 @@ Structural Monitoring Platform is a React based bridge monitoring tool that uses
     - What maintenance actions do you recomment for the East side of the bridge?
     - Predict the failure time given current degradation rate.
 
+## Architecture Diagram
+
+![Architecture Diagram](structure_intelligence/demoss/flowchart.png)
+
 ## Tech Stack
 
 - Frontend: React 19
