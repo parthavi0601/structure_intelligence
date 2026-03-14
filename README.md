@@ -78,10 +78,11 @@ Ensure the following are installed on your system:
 - **Ollama** (for running local AI models)
 
 ### 2. Clone the Repository
-    ```bash
-    git clone <repository-url>
-    cd project_structural
-    ```
+- 
+   ```bash
+   git clone <repository-url>
+   cd project_structural
+   ```
 
 ### 3. Backend Setup (Intelligence & API)
 
