@@ -59,13 +59,13 @@ Structural Monitoring Platform is a React based bridge monitoring tool that uses
 
 ## Tech Stack
 
-Frontend: React 19
-3D Visualization: Three.js
-Data Visualization: Recharts
-Styling: Tailwind CSS v4
-Backend: Python
-API Framework: FastAPI
-Libraries: Numpy, Pandas, LangChain, Scikit-learn, Scipy, FAISS 
+- Frontend: React 19
+- 3D Visualization: Three.js
+- Data Visualization: Recharts
+- Styling: Tailwind CSS v4
+- Backend: Python
+- API Framework: FastAPI
+- Libraries: Numpy, Pandas, LangChain, Scikit-learn, Scipy, FAISS 
 AI Model: Ollama (llama3) 
 
 ## Installation 
